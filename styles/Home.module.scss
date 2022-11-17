@@ -1,0 +1,15 @@
+.container {
+  .home {
+    padding: 3rem 4rem;
+
+    .top,
+    .bottom {
+      display: flex;
+      align-items: center;
+    }
+
+    .top {
+      margin-bottom: 1.5rem;
+    }
+  }
+}

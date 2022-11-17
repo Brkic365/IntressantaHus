@@ -1,0 +1,118 @@
+.container {
+  .adminPanelOne {
+    padding: 4.125rem 11.313rem;
+    padding-bottom: 2.563rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    place-content: space-evenly;
+
+    .addFiles,
+    .addSellers {
+      width: 39%;
+      height: 90%;
+      background: #ffffff;
+      box-shadow: 40px 40px 80px rgba(3, 15, 43, 0.02);
+      border-radius: 10px;
+
+      padding: 2.5rem;
+
+      h3 {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 30px;
+        color: #000000;
+      }
+
+      textarea,
+      input {
+        margin-top: 1.5rem;
+        width: 100%;
+        background: #ffffff;
+        border: 1px solid #c1cade;
+        border-radius: 5px;
+        resize: none;
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21px;
+        color: #214251;
+        padding: 0.5rem;
+      }
+
+      input {
+        margin: 1rem 0;
+      }
+
+      .infoInput {
+        position: relative;
+
+        .limit {
+          position: absolute;
+          right: 6px;
+          bottom: 12px;
+          z-index: 2;
+
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 21px;
+          color: #989da7;
+        }
+      }
+
+      .buttons {
+        margin-top: 3rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        place-content: space-between;
+
+        button {
+          border: 1px solid #214251;
+          border-radius: 50px;
+          background-color: transparent;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 24px;
+          color: #214251;
+          transition: 0.2s ease-in-out;
+          padding: 0.5rem 2rem;
+          cursor: pointer;
+        }
+
+        .cancel {
+          &:hover {
+            background-color: #214251;
+            color: white;
+          }
+        }
+
+        .save {
+          background-color: #214251;
+          color: white;
+
+          &:hover {
+            background-color: darken(#214251, 20%);
+          }
+        }
+      }
+    }
+
+    .addSellers {
+      position: relative;
+      align-self: stretch;
+      min-height: 80rem;
+
+      .buttons {
+        width: 90%;
+        position: absolute;
+        bottom: 2.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}

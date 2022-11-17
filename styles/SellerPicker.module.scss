@@ -1,0 +1,83 @@
+.sellerPicker {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin: 1.5rem 0;
+
+  .labels {
+    background: #f6f8fc;
+    border: 1px solid #d4dae9;
+    border-radius: 21px 21px 0 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 1rem 3rem;
+
+    h4 {
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 27px;
+      color: #000000;
+    }
+
+    h4:nth-child(1) {
+      width: 35%;
+    }
+
+    h4:nth-child(2) {
+      width: 45%;
+    }
+  }
+
+  .table {
+    background: #ffffff;
+    border: 1px solid #d4dae9;
+    border-radius: 0px 0px 21px 21px;
+    width: 100%;
+
+    .row {
+      border-bottom: 1px solid #d4dae9;
+      display: flex;
+      align-items: center;
+      padding: 1rem 3rem;
+      width: 100%;
+
+      .pfpHolder {
+        width: 35%;
+
+        .pfp {
+          border-radius: 10px;
+        }
+      }
+
+      h4 {
+        width: 45%;
+      }
+
+      .buttons {
+        display: flex;
+        align-items: center;
+
+        button {
+          padding: 0.6rem;
+          background: #eceaf3;
+          border-radius: 10px;
+          border: none;
+          cursor: pointer;
+          transition: 0.2s ease-in-out;
+
+          &:hover {
+            background-color: darken(#eceaf3, 20%);
+          }
+        }
+
+        .delete {
+          margin-right: 0.75rem;
+        }
+      }
+    }
+  }
+}

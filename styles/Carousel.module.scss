@@ -1,0 +1,62 @@
+.carousel {
+  max-width: 100%;
+  position: relative;
+  overflow: visible;
+  user-select: none;
+
+  .property {
+    padding-bottom: 2.75rem;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: visible;
+    padding-top: 1.5rem;
+
+    .imgHolder {
+      border-radius: 10px;
+      max-width: 100%;
+      z-index: 1;
+    }
+
+    .propertyDetails {
+      display: flex;
+      align-items: center;
+      background: #ffffff;
+      border: 1px solid #d8dee7;
+      box-shadow: 0px 4px 80px rgba(29, 102, 153, 0.03);
+      border-radius: 10px;
+      padding: 1.125rem 2.75rem;
+      width: fit-content;
+      margin-top: -3rem;
+      z-index: 2;
+      position: relative;
+
+      p {
+        font-family: "Circular Std";
+        font-style: normal;
+        font-weight: 450;
+        font-size: 20px;
+        line-height: 25px;
+        color: #214251;
+      }
+
+      svg {
+        width: 20px;
+        height: 24px;
+        color: #214251;
+        margin-right: 0.656rem;
+      }
+    }
+
+    .sellerPfp {
+      position: absolute;
+      z-index: 2;
+      overflow: visible;
+      right: 1rem;
+      top: 0;
+      border-radius: 50%;
+      box-shadow: 0px 4px 80px rgba(29, 102, 153, 0.05);
+    }
+  }
+}
