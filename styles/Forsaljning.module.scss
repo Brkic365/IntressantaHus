@@ -1,6 +1,6 @@
 .forsaljning {
   height: 44vh;
-  width: 37%;
+  width: 38.5%;
   background: #ffffff;
   box-shadow: 0px 4px 80px rgba(33, 66, 81, 0.05);
   border-radius: 10px;
@@ -19,7 +19,7 @@
 
   .content {
     margin-top: 2.313rem;
-    height: 20rem;
+    height: 30vh;
     width: 100%;
     display: flex;
     align-items: center;
@@ -28,18 +28,18 @@
     .chart {
       display: flex;
       align-items: center;
-      height: 20rem;
+      height: 30vh;
 
       .person {
         display: flex;
         align-items: center;
         flex-direction: column;
         margin: 0 1.625rem;
-        height: 20rem;
+        height: 30vh;
 
         .barHolder {
           margin: 0.625rem 0;
-          height: 20rem;
+          height: 30vh;
           display: flex;
           align-items: flex-end;
           justify-content: flex-end;

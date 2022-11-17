@@ -11,12 +11,17 @@
     align-items: center;
     flex-direction: column;
     overflow: visible;
-    padding-top: 1.5rem;
+    padding-top: 2rem;
 
     .imgHolder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       border-radius: 10px;
-      max-width: 100%;
+      max-width: 28vw;
+      max-height: 24vh;
       z-index: 1;
+      overflow: hidden;
     }
 
     .propertyDetails {
@@ -28,7 +33,7 @@
       border-radius: 10px;
       padding: 1.125rem 2.75rem;
       width: fit-content;
-      margin-top: -3rem;
+      margin-top: -2.5rem;
       z-index: 2;
       position: relative;
 

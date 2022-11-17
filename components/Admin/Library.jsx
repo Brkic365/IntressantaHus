@@ -34,7 +34,7 @@ function Library({ open, handleClose }) {
             </section>
           </section>
         </section>
-        <SimpleBar style={{ maxHeight: "47rem", width: "100%" }}>
+        <SimpleBar style={{ maxHeight: "70vh", width: "100%" }}>
           <section className={styles.grid}>
             {all_sellers.map((seller, i) => {
               return (
