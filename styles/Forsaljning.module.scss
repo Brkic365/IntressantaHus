@@ -1,5 +1,5 @@
 .forsaljning {
-  height: 44vh;
+  height: 27.5rem;
   width: 38.5%;
   background: #ffffff;
   box-shadow: 0px 4px 80px rgba(33, 66, 81, 0.05);
@@ -19,7 +19,7 @@
 
   .content {
     margin-top: 2.313rem;
-    height: 30vh;
+    height: 20rem;
     width: 100%;
     display: flex;
     align-items: center;
@@ -28,18 +28,18 @@
     .chart {
       display: flex;
       align-items: center;
-      height: 30vh;
+      height: 20rem;
 
       .person {
         display: flex;
         align-items: center;
         flex-direction: column;
         margin: 0 1.625rem;
-        height: 30vh;
+        height: 20rem;
 
         .barHolder {
           margin: 0.625rem 0;
-          height: 30vh;
+          height: 20rem;
           display: flex;
           align-items: flex-end;
           justify-content: flex-end;
@@ -94,5 +94,11 @@
         }
       }
     }
+  }
+}
+
+@media only screen and (max-width: 1800px) {
+  .forsaljning {
+    height: 29rem;
   }
 }

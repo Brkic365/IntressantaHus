@@ -1,5 +1,5 @@
 .koksvecka {
-  height: 44vh;
+  height: 27.5rem;
   width: 22%;
   background: #ffffff;
   box-shadow: 0px 4px 80px rgba(33, 66, 81, 0.05);
@@ -73,5 +73,11 @@
       line-height: 21px;
       color: #214251;
     }
+  }
+}
+
+@media only screen and (max-width: 1800px) {
+  .koksvecka {
+    height: 29rem;
   }
 }
