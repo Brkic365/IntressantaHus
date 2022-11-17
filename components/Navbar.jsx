@@ -25,12 +25,14 @@ function Navbar() {
   return (
     <nav className={styles.nav}>
       <section className={styles.logoHolder}>
-        <Image
-          src={`/images/logo.png`}
-          width={151}
-          height={45}
-          alt="Intressanta hus"
-        />
+        <Link href="/">
+          <Image
+            src={`/images/logo.png`}
+            width={151}
+            height={45}
+            alt="Intressanta hus"
+          />
+        </Link>
       </section>
 
       <ul>
