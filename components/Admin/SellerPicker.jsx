@@ -41,11 +41,13 @@ function SellerPicker() {
           // Check if this is the last seller
           let last = i === sellers.length - 1;
 
+          console.log(last);
+
           return (
             <section
               className={styles.row}
               key={i}
-              styles={last ? { borderBottom: "none" } : undefined}
+              style={{ borderBottom: last ? "none" : "1px solid #d4dae9" }}
             >
               <section className={styles.pfpHolder}>
                 <section className={styles.pfp}>
