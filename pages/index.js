@@ -8,6 +8,8 @@ import Forsaljning from "../components/Home/Forsaljning";
 import Pipeline from "../components/Home/Pipeline";
 import SenastSalt from "../components/Home/SenastSalt";
 
+import { Fade } from "react-awesome-reveal";
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -21,16 +23,18 @@ export default function Home() {
       </Head>
 
       <main className={styles.home}>
-        <section className={styles.top}>
-          <Koksvecka />
-          <TilverkasNu />
-          <Forsaljning />
-        </section>
+        <Fade cascade>
+          <section className={styles.top}>
+            <Koksvecka />
+            <TilverkasNu />
+            <Forsaljning />
+          </section>
 
-        <section className={styles.bottom}>
-          <Pipeline />
-          <SenastSalt />
-        </section>
+          <section className={styles.bottom}>
+            <Pipeline />
+            <SenastSalt />
+          </section>
+        </Fade>
       </main>
     </div>
   );

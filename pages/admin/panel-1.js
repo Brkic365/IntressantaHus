@@ -6,6 +6,8 @@ import styles from "../../styles/AdminPanel.module.scss";
 import FilePicker from "../../components/Admin/FilePicker";
 import SavedPopup from "../../components/Admin/SavedPopup";
 
+import { Fade } from "react-awesome-reveal";
+
 export default function PanelOne() {
   const [saved, setSaved] = useState(false);
 
@@ -29,29 +31,33 @@ export default function PanelOne() {
 
       <main className={styles.adminPanelOne}>
         <section className={styles.addFiles}>
-          <h3>Tillverkas nu</h3>
-          <FilePicker />
-          <h3>Säljare</h3>
-          <FilePicker />
-          <section className={styles.buttons}>
-            <button className={styles.cancel}>avbryt</button>
-            <button className={styles.save} onClick={() => setSaved(true)}>
-              spara
-            </button>
-          </section>
+          <Fade cascade damping={0.2}>
+            <h3>Tillverkas nu</h3>
+            <FilePicker />
+            <h3>Säljare</h3>
+            <FilePicker />
+            <section className={styles.buttons}>
+              <button className={styles.cancel}>avbryt</button>
+              <button className={styles.save} onClick={() => setSaved(true)}>
+                spara
+              </button>
+            </section>
+          </Fade>
         </section>
 
         <section className={styles.addFiles}>
-          <h3>Senast sålt</h3>
-          <FilePicker />
-          <h3>Säljare</h3>
-          <FilePicker />
-          <section className={styles.buttons}>
-            <button className={styles.cancel}>avbryt</button>
-            <button className={styles.save} onClick={() => setSaved(true)}>
-              spara
-            </button>
-          </section>
+          <Fade cascade damping={0.2}>
+            <h3>Senast sålt</h3>
+            <FilePicker />
+            <h3>Säljare</h3>
+            <FilePicker />
+            <section className={styles.buttons}>
+              <button className={styles.cancel}>avbryt</button>
+              <button className={styles.save} onClick={() => setSaved(true)}>
+                spara
+              </button>
+            </section>
+          </Fade>
         </section>
       </main>
     </div>

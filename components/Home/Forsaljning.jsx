@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "../../styles/Forsaljning.module.scss";
 
+import { Fade } from "react-awesome-reveal";
+
 const DATA = [
   {
     name: "Achraf Andrew",
@@ -63,15 +65,19 @@ function Forsaljning() {
         </section>
 
         <section className={styles.info}>
-          <section className={styles.infoBlock}>
-            <p>2022</p>
-            <h3>38</h3>
-          </section>
+          <Fade delay={500}>
+            <section className={styles.infoBlock}>
+              <p>2022</p>
+              <h3>38</h3>
+            </section>
+          </Fade>
 
-          <section className={styles.infoBlock}>
-            <p>Totalt</p>
-            <h3>410</h3>
-          </section>
+          <Fade delay={600}>
+            <section className={styles.infoBlock}>
+              <p>Totalt</p>
+              <h3>410</h3>
+            </section>
+          </Fade>
         </section>
       </section>
     </section>

@@ -2,6 +2,8 @@ import React from "react";
 import Image from "next/image";
 import styles from "../../styles/Koksvecka.module.scss";
 
+import { Fade } from "react-awesome-reveal";
+
 const dennaVecka = [
   {
     name: "Achraf Andrew",
@@ -76,12 +78,14 @@ function Koksvecka() {
         </section>
       </section>
 
-      <section className={styles.disclaimer}>
-        <p>
-          Julfest planerad på kontoret den 18/12. Osa gärna direkt till Emelie!
-          God jul! 🎄
-        </p>
-      </section>
+      <Fade delay={300}>
+        <section className={styles.disclaimer}>
+          <p>
+            Julfest planerad på kontoret den 18/12. Osa gärna direkt till
+            Emelie! God jul! 🎄
+          </p>
+        </section>
+      </Fade>
     </section>
   );
 }
