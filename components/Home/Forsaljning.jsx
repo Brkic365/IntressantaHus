@@ -46,12 +46,16 @@ function Forsaljning() {
 
             return (
               <section className={styles.person} key={i}>
-                <Image
-                  src={`/images/people/${person.pfp}`}
-                  width={52}
-                  height={52}
-                  alt={person.name}
-                />
+                <section className={styles.pfpHolder}>
+                  <Image
+                    src={`/images/people/${person.pfp}`}
+                    width={52}
+                    height={52}
+                    layout="responsive"
+                    objectFit="contain"
+                    alt={person.name}
+                  />
+                </section>
                 <section className={styles.barHolder}>
                   <div
                     className={styles.bar}

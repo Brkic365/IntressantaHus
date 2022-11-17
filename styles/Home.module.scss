@@ -13,3 +13,19 @@
     }
   }
 }
+
+@media only screen and (max-width: 1800px) {
+  .container {
+    .home {
+      padding: 2rem 3rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 1700px) {
+  .container {
+    .home {
+      padding: 1rem;
+    }
+  }
+}

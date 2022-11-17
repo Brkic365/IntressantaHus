@@ -41,12 +41,16 @@ function Koksvecka() {
             dennaVecka.map((person, i) => {
               return (
                 <section className={styles.person} key={i}>
-                  <Image
-                    src={`/images/people/${person.pfp}`}
-                    width={55}
-                    height={55}
-                    alt={person.name}
-                  />
+                  <section className={styles.pfpHolder}>
+                    <Image
+                      src={`/images/people/${person.pfp}`}
+                      width={55}
+                      height={55}
+                      layout="responsive"
+                      objectFit="contain"
+                      alt={person.name}
+                    />
+                  </section>
                   <p>{person.name}</p>
                 </section>
               );
@@ -64,12 +68,16 @@ function Koksvecka() {
             nastaVecka.map((person, i) => {
               return (
                 <section className={styles.person} key={i}>
-                  <Image
-                    src={`/images/people/${person.pfp}`}
-                    width={55}
-                    height={55}
-                    alt={person.name}
-                  />
+                  <section className={styles.pfpHolder}>
+                    <Image
+                      src={`/images/people/${person.pfp}`}
+                      width={55}
+                      height={55}
+                      layout="responsive"
+                      objectFit="contain"
+                      alt={person.name}
+                    />
+                  </section>
                   <p>{person.name}</p>
                 </section>
               );

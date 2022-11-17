@@ -18,7 +18,8 @@
       align-items: center;
       justify-content: center;
       border-radius: 10px;
-      max-width: 30vw;
+      max-width: 27vw;
+      width: 50rem;
       z-index: 1;
       overflow: hidden;
     }
@@ -54,13 +55,50 @@
     }
 
     .sellerPfp {
+      width: 4.313rem;
       position: absolute;
       z-index: 2;
       overflow: visible;
-      right: 1rem;
+      right: 0;
       top: 0;
       border-radius: 50%;
       box-shadow: 0px 4px 80px rgba(29, 102, 153, 0.05);
+    }
+  }
+}
+
+@media only screen and (max-width: 1800px) {
+  .carousel {
+    .property {
+      .imgHolder {
+        max-width: 26vw;
+        max-height: 25vh;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1700px) {
+  .carousel {
+    .property {
+      .propertyDetails {
+        padding: 0.7rem 1.5rem;
+        margin-top: -1.5rem;
+
+        p {
+          font-size: 16px;
+        }
+
+        svg {
+          width: 18px;
+          height: 21px;
+        }
+      }
+
+      .imgHolder {
+        max-width: 24vw;
+        max-height: 23vh;
+      }
     }
   }
 }

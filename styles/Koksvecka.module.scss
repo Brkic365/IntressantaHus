@@ -1,5 +1,5 @@
 .koksvecka {
-  height: 27.5rem;
+  height: 44vh;
   width: 22%;
   background: #ffffff;
   box-shadow: 0px 4px 80px rgba(33, 66, 81, 0.05);
@@ -8,6 +8,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  position: relative;
 
   h2 {
     font-style: normal;
@@ -52,6 +53,10 @@
         align-items: center;
         flex-direction: column;
 
+        .pfpHolder {
+          width: 3.438rem;
+        }
+
         p {
           margin-top: 0.22rem;
         }
@@ -60,7 +65,11 @@
   }
 
   .disclaimer {
-    margin-top: 2rem;
+    position: absolute;
+    width: 95%;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 1rem;
     background: #f1f0ec;
     box-shadow: 0px 4px 80px rgba(33, 66, 81, 0.05);
     border-radius: 10px;
@@ -78,6 +87,65 @@
 
 @media only screen and (max-width: 1800px) {
   .koksvecka {
-    height: 29rem;
+    padding: 1rem;
+
+    h2 {
+      font-size: 20px;
+    }
+
+    h3 {
+      font-size: 16px;
+    }
+
+    p {
+      font-size: 11px;
+    }
+
+    .vecka {
+      margin-top: 0.5rem;
+    }
+
+    .disclaimer {
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1700px) {
+  .koksvecka {
+    padding: 0.5rem;
+    height: 46.5vh;
+
+    h2 {
+      font-size: 18px;
+    }
+
+    h3 {
+      font-size: 15px;
+    }
+
+    p {
+      font-size: 10px;
+    }
+
+    .vecka {
+      margin-top: 0.5rem;
+      .people {
+        .person {
+          .pfpHolder {
+            width: 2.5rem;
+          }
+        }
+      }
+    }
+
+    .disclaimer {
+      padding: 0.7rem;
+      p {
+        font-size: 12px;
+      }
+    }
   }
 }

@@ -48,6 +48,8 @@ function Carousel({ data }) {
                     src={`/images/properties/${property.img}`}
                     width={534}
                     height={283}
+                    layout="responsive"
+                    objectFit="contain"
                     alt={property.name}
                   />
                 </section>
@@ -63,6 +65,8 @@ function Carousel({ data }) {
                       src={`/images/people/${property.seller_pfp}`}
                       width={69}
                       height={69}
+                      layout="responsive"
+                      objectFit="contain"
                       priority
                       alt={property.name}
                     />

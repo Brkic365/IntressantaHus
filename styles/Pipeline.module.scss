@@ -1,5 +1,5 @@
 .pipeline {
-  height: 27.5rem;
+  height: 44vh;
   width: 61%;
   background: #ffffff;
   box-shadow: 0px 4px 80px rgba(33, 66, 81, 0.05);
@@ -20,6 +20,20 @@
 
 @media only screen and (max-width: 1800px) {
   .pipeline {
-    height: 29rem;
+    padding: 1rem;
+    h2 {
+      font-size: 20px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1700px) {
+  .pipeline {
+    padding: 0.5rem;
+    height: 46.5vh;
+
+    h2 {
+      font-size: 18px;
+    }
   }
 }
