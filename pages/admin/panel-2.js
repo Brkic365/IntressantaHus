@@ -35,7 +35,7 @@ export default function PanelTwo() {
 
       <main className={styles.adminPanelOne}>
         <section className={styles.addFiles}>
-          <Fade cascade damping={0.2}>
+          <Fade triggerOnce cascade damping={0.2}>
             <h3>Denna vecka</h3>
             <FilePicker />
             <h3>Nästa vecka</h3>
@@ -60,7 +60,7 @@ export default function PanelTwo() {
         </section>
 
         <section className={styles.addSellers}>
-          <Fade cascade damping={0.2}>
+          <Fade triggerOnce cascade damping={0.2}>
             <section className={styles.content}>
               <h3>Försäljning</h3>
               <SellerPicker />

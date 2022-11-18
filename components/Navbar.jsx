@@ -30,6 +30,8 @@ function Navbar() {
             src={`/images/logo.png`}
             width={151}
             height={45}
+            layout="responsive"
+            objectFit="contain"
             alt="Intressanta hus"
           />
         </Link>

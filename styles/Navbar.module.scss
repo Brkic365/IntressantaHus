@@ -5,6 +5,10 @@
   display: flex;
   align-items: center;
 
+  .logoHolder {
+    width: 8vw;
+  }
+
   ul {
     display: flex;
     align-items: center;
@@ -31,6 +35,38 @@
     .active {
       color: white;
       background: #214251;
+    }
+  }
+}
+
+@media only screen and (max-width: 1800px) {
+  .nav {
+    padding: 1rem 4rem;
+
+    ul {
+      margin-left: 7rem;
+
+      li {
+        margin-right: 3rem;
+        padding: 0.3rem 0.8rem;
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1700px) {
+  .nav {
+    padding: 1rem 3.5rem;
+
+    ul {
+      margin-left: 6rem;
+
+      li {
+        margin-right: 2.5rem;
+        padding: 0.25rem 0.8rem;
+        font-size: 11px;
+      }
     }
   }
 }

@@ -8,10 +8,11 @@
     align-items: flex-start;
     justify-content: center;
     place-content: space-evenly;
+    width: 100%;
 
     .addFiles,
     .addSellers {
-      width: 39%;
+      width: 35vw;
       height: 90%;
       background: #ffffff;
       box-shadow: 40px 40px 80px rgba(3, 15, 43, 0.02);
@@ -112,6 +113,62 @@
         bottom: 2.5rem;
         left: 50%;
         transform: translateX(-50%);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1800px) {
+  .container {
+    .adminPanelOne {
+      padding: 4rem;
+      padding-bottom: 2.563rem;
+    }
+  }
+}
+@media only screen and (max-width: 1700px) {
+  .container {
+    .adminPanelOne {
+      padding: 3rem;
+      padding-bottom: 2.563rem;
+
+      .addFiles,
+      .addSellers {
+        width: 38vw;
+        padding: 2rem;
+
+        h3 {
+          font-size: 17px;
+        }
+
+        textarea,
+        input {
+          margin-top: 0.75rem;
+          font-size: 14px;
+        }
+
+        input {
+          margin: 0.75rem 0;
+        }
+
+        .infoInput {
+          .limit {
+            font-size: 12px;
+          }
+        }
+
+        .buttons {
+          margin-top: 2rem;
+
+          button {
+            font-size: 13px;
+            padding: 0.3rem 1.5rem;
+          }
+        }
+      }
+
+      .addSellers {
+        min-height: 67rem;
       }
     }
   }

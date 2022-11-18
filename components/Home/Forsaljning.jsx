@@ -69,14 +69,14 @@ function Forsaljning() {
         </section>
 
         <section className={styles.info}>
-          <Fade delay={500}>
+          <Fade triggerOnce delay={500}>
             <section className={styles.infoBlock}>
               <p>2022</p>
               <h3>38</h3>
             </section>
           </Fade>
 
-          <Fade delay={600}>
+          <Fade triggerOnce delay={600}>
             <section className={styles.infoBlock}>
               <p>Totalt</p>
               <h3>410</h3>

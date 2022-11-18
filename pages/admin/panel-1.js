@@ -31,7 +31,7 @@ export default function PanelOne() {
 
       <main className={styles.adminPanelOne}>
         <section className={styles.addFiles}>
-          <Fade cascade damping={0.2}>
+          <Fade triggerOnce cascade damping={0.2}>
             <h3>Tillverkas nu</h3>
             <FilePicker />
             <h3>Säljare</h3>
@@ -46,7 +46,7 @@ export default function PanelOne() {
         </section>
 
         <section className={styles.addFiles}>
-          <Fade cascade damping={0.2}>
+          <Fade triggerOnce cascade damping={0.2}>
             <h3>Senast sålt</h3>
             <FilePicker />
             <h3>Säljare</h3>

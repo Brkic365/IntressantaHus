@@ -7,12 +7,16 @@ import { FaFolderMinus } from "react-icons/fa";
 function FilePicker() {
   return (
     <section className={styles.filePicker}>
-      <Image
-        src={`/images/admin/file-picker.png`}
-        width={100}
-        height={97.34}
-        alt="File picker"
-      />
+      <section className={styles.imgHolder}>
+        <Image
+          src={`/images/admin/file-picker.png`}
+          width={100}
+          height={97.34}
+          layout="responsive"
+          objectFit="contain"
+          alt="File picker"
+        />
+      </section>
       <p>
         <span>Ladda upp fil</span> pdf, släpp filen här
       </p>

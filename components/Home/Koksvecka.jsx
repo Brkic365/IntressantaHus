@@ -86,7 +86,7 @@ function Koksvecka() {
         </section>
       </section>
 
-      <Fade delay={300}>
+      <Fade triggerOnce delay={300}>
         <section className={styles.disclaimer}>
           <p>
             Julfest planerad på kontoret den 18/12. Osa gärna direkt till

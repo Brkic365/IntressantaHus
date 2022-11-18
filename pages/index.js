@@ -23,7 +23,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.home}>
-        <Fade cascade>
+        <Fade triggerOnce cascade>
           <section className={styles.top}>
             <Koksvecka />
             <TilverkasNu />
