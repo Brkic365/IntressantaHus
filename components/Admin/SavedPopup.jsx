@@ -15,7 +15,7 @@ function SavedPopup({ open, handleClose }) {
     >
       <section className={styles.box}>
         <Image
-          src={`/images/admin/saved.png`}
+          src={`/images/admin/saved.webp`}
           width={164}
           height={164}
           alt="Saved"

@@ -4,19 +4,19 @@ import Carousel from "./Carousel";
 
 const CAROUSEL_DATA = [
   {
-    img: "villa.svg",
+    img: "villa.webp",
     name: "Villa Jönsson, Stockholm",
   },
   {
-    img: "villa.svg",
+    img: "villa-2.webp",
     name: "Villa Jönsson, Stockholm",
   },
   {
-    img: "villa.svg",
+    img: "villa.webp",
     name: "Villa Jönsson, Stockholm",
   },
   {
-    img: "villa.svg",
+    img: "villa-2.webp",
     name: "Villa Jönsson, Stockholm",
   },
 ];

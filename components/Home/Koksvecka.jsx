@@ -7,22 +7,22 @@ import { Fade } from "react-awesome-reveal";
 const dennaVecka = [
   {
     name: "Achraf Andrew",
-    pfp: "person1.png",
+    pfp: "person1.webp",
   },
   {
     name: "Achraf Andrew",
-    pfp: "person2.png",
+    pfp: "person2.webp",
   },
 ];
 
 const nastaVecka = [
   {
     name: "Achraf Andrew",
-    pfp: "person3.png",
+    pfp: "person3.webp",
   },
   {
     name: "Achraf Andrew",
-    pfp: "person4.png",
+    pfp: "person4.webp",
   },
 ];
 

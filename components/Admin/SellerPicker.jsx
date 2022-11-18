@@ -7,15 +7,15 @@ import Library from "./Library";
 const sellers = [
   {
     name: "Achraf Andrew",
-    pfp: "person1.png",
+    pfp: "person1.webp",
   },
   {
     name: "Achraf Andrew",
-    pfp: "person2.png",
+    pfp: "person2.webp",
   },
   {
     name: "Achraf Andrew",
-    pfp: "person3.png",
+    pfp: "person3.webp",
   },
 ];
 

@@ -27,7 +27,7 @@ function Navbar() {
       <section className={styles.logoHolder}>
         <Link href="/">
           <Image
-            src={`/images/logo.png`}
+            src={`/images/logo.webp`}
             width={151}
             height={45}
             layout="responsive"

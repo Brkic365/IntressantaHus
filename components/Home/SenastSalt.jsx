@@ -5,24 +5,24 @@ import Carousel from "./Carousel";
 
 const CAROUSEL_DATA = [
   {
-    img: "villa.svg",
+    img: "villa.webp",
     name: "Villa Jönsson, Stockholm",
-    seller_pfp: "person1.png",
+    seller_pfp: "person1.webp",
   },
   {
-    img: "villa.svg",
+    img: "villa-2.webp",
     name: "Villa Jönsson, Stockholm",
-    seller_pfp: "person2.png",
+    seller_pfp: "person2.webp",
   },
   {
-    img: "villa.svg",
+    img: "villa.webp",
     name: "Villa Jönsson, Stockholm",
-    seller_pfp: "person3.png",
+    seller_pfp: "person3.webp",
   },
   {
-    img: "villa.svg",
+    img: "villa-2.webp",
     name: "Villa Jönsson, Stockholm",
-    seller_pfp: "person4.png",
+    seller_pfp: "person4.webp",
   },
 ];
 

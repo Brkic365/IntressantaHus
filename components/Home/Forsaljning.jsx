@@ -7,17 +7,17 @@ import { Fade } from "react-awesome-reveal";
 const DATA = [
   {
     name: "Achraf Andrew",
-    pfp: "person1.png",
+    pfp: "person1.webp",
     sales: 40,
   },
   {
     name: "Achraf Andrew",
-    pfp: "person2.png",
+    pfp: "person2.webp",
     sales: 55,
   },
   {
     name: "Achraf Andrew",
-    pfp: "person3.png",
+    pfp: "person3.webp",
     sales: 45,
   },
 ];

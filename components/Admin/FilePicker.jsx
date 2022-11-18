@@ -9,7 +9,7 @@ function FilePicker() {
     <section className={styles.filePicker}>
       <section className={styles.imgHolder}>
         <Image
-          src={`/images/admin/file-picker.png`}
+          src={`/images/admin/file-picker.webp`}
           width={100}
           height={97.34}
           layout="responsive"
