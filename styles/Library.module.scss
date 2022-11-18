@@ -7,6 +7,7 @@
   background: #ffffff;
   box-shadow: 40px 40px 80px rgba(3, 15, 43, 0.02);
   border-radius: 10px;
+  outline: none;
 
   h2 {
     padding: 2rem;
@@ -100,6 +101,9 @@
     gap: 2rem;
 
     .seller {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
       width: fit-content;
       padding: 1.5rem;
       background: #ffffff;
@@ -114,6 +118,71 @@
         font-size: 16px;
         line-height: 28px;
         color: #214251;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1700px) {
+  .box {
+    width: 71%;
+    h2 {
+      padding: 2rem;
+      font-size: 21px;
+    }
+
+    .close {
+      top: 0.5rem;
+      right: 0.5rem;
+      padding: 0.4rem 0.5rem;
+
+      svg {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+
+    .top {
+      .content {
+        padding: 0 2rem;
+
+        h3 {
+          padding-bottom: 0.5rem;
+          font-size: 16px;
+          border-bottom: 3px solid black;
+        }
+
+        .searchbar {
+          padding-bottom: 0.5rem;
+
+          svg {
+            width: 1.1rem;
+            height: 1.1rem;
+            margin-right: 0.5rem;
+          }
+
+          input {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    .grid {
+      padding: 2rem;
+      gap: 1.5rem;
+
+      .seller {
+        padding: 1rem;
+
+        .pfpHolder {
+          width: 4rem;
+        }
+
+        p {
+          margin-top: 0.5rem;
+          font-size: 13px;
+        }
       }
     }
   }

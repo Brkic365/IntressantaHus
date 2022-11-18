@@ -39,12 +39,16 @@ function Library({ open, handleClose }) {
             {all_sellers.map((seller, i) => {
               return (
                 <section className={styles.seller} key={i}>
-                  <Image
-                    src={`/images/people/${seller.pfp}`}
-                    width={110}
-                    height={110}
-                    alt={seller.name}
-                  />
+                  <section className={styles.pfpHolder}>
+                    <Image
+                      src={`/images/people/${seller.pfp}`}
+                      width={110}
+                      height={110}
+                      layout="responsive"
+                      objectFit="contain"
+                      alt={seller.name}
+                    />
+                  </section>
                   <p>{seller.name}</p>
                 </section>
               );
