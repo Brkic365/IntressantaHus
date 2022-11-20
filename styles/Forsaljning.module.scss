@@ -60,10 +60,9 @@
       display: flex;
       align-items: center;
       flex-direction: column;
-      place-content: space-evenly;
-      height: 100%;
 
       .infoBlock {
+        margin: 1rem 0;
         width: 10rem;
         display: flex;
         align-items: center;
@@ -111,7 +110,7 @@
       .info {
         .infoBlock {
           width: 8rem;
-          padding: 1rem 1.5rem;
+          padding: 0.8rem 1.5rem;
 
           p {
             font-size: 14px;
