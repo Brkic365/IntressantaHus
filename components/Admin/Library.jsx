@@ -15,10 +15,6 @@ function Library({ open, handleClose, amount }) {
   const [canSave, setCanSave] = useState(false);
 
   const selectSeller = (i) => {
-    console.log(i, amount, canSave);
-
-    console.log(selected.length < amount);
-
     // If seller is already selected, remove him
     if (selected.includes(i)) {
       const index = selected.indexOf(i);
@@ -31,7 +27,7 @@ function Library({ open, handleClose, amount }) {
       // If the selected amount is higher or same as desired amount,
       // Remove the last element
       if (selected.length >= amount) {
-        setSelected((prev) => prev.splice(-1));
+        setSelected((prev) => prev.slice(0, -1));
       }
 
       setSelected((prev) => [...prev, i]);
