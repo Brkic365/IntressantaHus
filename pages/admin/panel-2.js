@@ -4,6 +4,7 @@ import Image from "next/image";
 import styles from "../../styles/AdminPanel.module.scss";
 
 import FilePicker from "../../components/Admin/FilePicker";
+import LibraryPicker from "../../components/Admin/LibraryPicker";
 import SellerPicker from "../../components/Admin/SellerPicker";
 
 import SavedPopup from "../../components/Admin/SavedPopup";
@@ -37,9 +38,9 @@ export default function PanelTwo() {
         <section className={styles.addFiles}>
           <Fade triggerOnce cascade damping={0.2}>
             <h3>Denna vecka</h3>
-            <FilePicker />
+            <LibraryPicker amount={2} />
             <h3>Nästa vecka</h3>
-            <FilePicker />
+            <LibraryPicker amount={2} />
             <h3>Information</h3>
             <section className={styles.infoInput}>
               {" "}

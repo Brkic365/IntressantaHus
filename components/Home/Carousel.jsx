@@ -17,7 +17,7 @@ import "swiper/css/scrollbar";
 // Import Swiper effect styles
 import "swiper/css/effect-creative";
 
-function Carousel({ data }) {
+function Carousel({ property }) {
   return (
     <main className={styles.carousel}>
       {/* Carousel element used to display multiple reviews */}
@@ -38,14 +38,14 @@ function Carousel({ data }) {
         pagination={true}
         modules={[Autoplay, Pagination]}
       >
-        {data.map((property, i) => {
+        {property.images.map((imgSrc, i) => {
           // Map through properties and add each one to the carousel
           return (
             <SwiperSlide key={i}>
               <section className={styles.property}>
                 <section className={styles.imgHolder}>
                   <Image
-                    src={`/images/properties/${property.img}`}
+                    src={`/images/properties/${imgSrc}`}
                     width={534}
                     height={283}
                     layout="responsive"
@@ -53,29 +53,28 @@ function Carousel({ data }) {
                     alt={property.name}
                   />
                 </section>
-
-                <section className={styles.propertyDetails}>
-                  <HiOutlineLocationMarker />
-                  <p>{property.name}</p>
-                </section>
-
-                {property.seller_pfp && (
-                  <section className={styles.sellerPfp}>
-                    <Image
-                      src={`/images/people/${property.seller_pfp}`}
-                      width={69}
-                      height={69}
-                      layout="responsive"
-                      objectFit="contain"
-                      priority
-                      alt={property.name}
-                    />
-                  </section>
-                )}
               </section>
             </SwiperSlide>
           );
         })}
+        <section className={styles.propertyDetails}>
+          <HiOutlineLocationMarker />
+          <p>{property.name}</p>
+        </section>
+
+        {property.seller_pfp && (
+          <section className={styles.sellerPfp}>
+            <Image
+              src={`/images/people/${property.seller_pfp}`}
+              width={69}
+              height={69}
+              layout="responsive"
+              objectFit="contain"
+              priority
+              alt={property.name}
+            />
+          </section>
+        )}
       </Swiper>
     </main>
   );

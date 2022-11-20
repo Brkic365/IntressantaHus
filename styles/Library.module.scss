@@ -120,6 +120,49 @@
         color: #214251;
       }
     }
+
+    .selected {
+      border-color: #214251;
+      box-shadow: 40px 40px 80px rgba(3, 15, 43, 0.02);
+    }
+  }
+
+  .buttons {
+    display: flex;
+    align-items: center;
+    place-content: space-between;
+    width: fit-content;
+    margin: 1rem auto;
+
+    button {
+      margin: 0 1rem;
+      border: 1px solid #214251;
+      border-radius: 50px;
+      background-color: transparent;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: #214251;
+      transition: 0.2s ease-in-out;
+      padding: 0.5rem 2rem;
+      cursor: pointer;
+    }
+
+    .cancel {
+      &:hover {
+        background-color: #214251;
+        color: white;
+      }
+    }
+
+    .save {
+      background-color: #214251;
+      color: white;
+
+      &:hover {
+        background-color: darken(#214251, 20%);
+      }
+    }
   }
 }
 

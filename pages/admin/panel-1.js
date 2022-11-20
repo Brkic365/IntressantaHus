@@ -4,6 +4,7 @@ import Image from "next/image";
 import styles from "../../styles/AdminPanel.module.scss";
 
 import FilePicker from "../../components/Admin/FilePicker";
+import LibraryPicker from "../../components/Admin/LibraryPicker";
 import SavedPopup from "../../components/Admin/SavedPopup";
 
 import { Fade } from "react-awesome-reveal";
@@ -34,8 +35,8 @@ export default function PanelOne() {
           <Fade triggerOnce cascade damping={0.2}>
             <h3>Tillverkas nu</h3>
             <FilePicker />
-            <h3>Säljare</h3>
-            <FilePicker />
+            <h3>Plats</h3>
+            <input placeholder="Ange en plats..." />
             <section className={styles.buttons}>
               <button className={styles.cancel}>avbryt</button>
               <button className={styles.save} onClick={() => setSaved(true)}>
@@ -50,7 +51,9 @@ export default function PanelOne() {
             <h3>Senast sålt</h3>
             <FilePicker />
             <h3>Säljare</h3>
-            <FilePicker />
+            <LibraryPicker amount={1} />
+            <h3>Plats</h3>
+            <input placeholder="Ange en plats..." />
             <section className={styles.buttons}>
               <button className={styles.cancel}>avbryt</button>
               <button className={styles.save} onClick={() => setSaved(true)}>

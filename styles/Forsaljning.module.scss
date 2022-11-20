@@ -27,7 +27,7 @@
 
     .chart {
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       height: 30vh;
 
       .person {
@@ -35,24 +35,16 @@
         align-items: center;
         flex-direction: column;
         margin: 0 1.625rem;
-        height: 30vh;
 
         .pfpHolder {
           width: 3.438rem;
         }
 
-        .barHolder {
+        .bar {
           margin: 0.625rem 0;
-          height: 30vh;
-          display: flex;
-          align-items: flex-end;
-          justify-content: flex-end;
-
-          .bar {
-            background: #214251;
-            border-radius: 7px 7px 0px 0px;
-            width: 3.125rem;
-          }
+          background: #214251;
+          border-radius: 7px 7px 0px 0px;
+          width: 3.125rem;
         }
 
         p {
@@ -74,9 +66,9 @@
       .infoBlock {
         width: 10rem;
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         flex-direction: column;
-        text-align: start;
+        text-align: center;
         padding: 1.625rem 3rem;
 
         background: #ffffff;

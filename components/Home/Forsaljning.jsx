@@ -42,7 +42,7 @@ function Forsaljning() {
         <section className={styles.chart}>
           {DATA.map((person, i) => {
             // Calculate height of bar depending on maximum sales
-            let height = (person.sales / maxSales) * 100;
+            let height = (person.sales / maxSales) * 20;
 
             return (
               <section className={styles.person} key={i}>
@@ -56,12 +56,7 @@ function Forsaljning() {
                     alt={person.name}
                   />
                 </section>
-                <section className={styles.barHolder}>
-                  <div
-                    className={styles.bar}
-                    style={{ height: `${height}%` }}
-                  />
-                </section>
+                <div className={styles.bar} style={{ height: `${height}vh` }} />
                 <p>{person.sales}</p>
               </section>
             );

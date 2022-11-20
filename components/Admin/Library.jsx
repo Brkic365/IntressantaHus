@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import styles from "../../styles/Library.module.scss";
 import Modal from "@mui/material/Modal";
@@ -10,7 +10,36 @@ import { AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
 
 import all_sellers from "../../public/data/all_sellers.json";
 
-function Library({ open, handleClose }) {
+function Library({ open, handleClose, amount }) {
+  const [selected, setSelected] = useState([]);
+  const [canSave, setCanSave] = useState(false);
+
+  const selectSeller = (i) => {
+    console.log(i, amount, canSave);
+
+    console.log(selected.length < amount);
+
+    // If seller is already selected, remove him
+    if (selected.includes(i)) {
+      const index = selected.indexOf(i);
+      if (index > -1) {
+        // only splice array when item is found
+        setSelected((prev) => prev.filter((x) => x !== i));
+      }
+      // Else, add him to the array of selected sellers
+    } else {
+      // If the selected amount is higher or same as desired amount,
+      // Remove the last element
+      if (selected.length >= amount) {
+        setSelected((prev) => prev.splice(-1));
+      }
+
+      setSelected((prev) => [...prev, i]);
+    }
+
+    setCanSave(selected.length === amount);
+  };
+
   return (
     <Modal
       open={open}
@@ -38,7 +67,20 @@ function Library({ open, handleClose }) {
           <section className={styles.grid}>
             {all_sellers.map((seller, i) => {
               return (
-                <section className={styles.seller} key={i}>
+                <section
+                  className={`${styles.seller} ${
+                    selected.includes(i) ? styles.selected : undefined
+                  }`}
+                  style={
+                    selected.length === amount
+                      ? {
+                          opacity: selected.includes(i) ? 1 : 0.5,
+                        }
+                      : undefined
+                  }
+                  key={i}
+                  onClick={() => selectSeller(i)}
+                >
                   <section className={styles.pfpHolder}>
                     <Image
                       src={`/images/people/${seller.pfp}`}
@@ -54,6 +96,16 @@ function Library({ open, handleClose }) {
               );
             })}
           </section>
+          {selected.length === amount && (
+            <section className={styles.buttons}>
+              <button className={styles.cancel} onClick={handleClose}>
+                avbryt
+              </button>
+              <button className={styles.save} onClick={handleClose}>
+                spara
+              </button>
+            </section>
+          )}
         </SimpleBar>
       </section>
     </Modal>

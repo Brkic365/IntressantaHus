@@ -42,12 +42,7 @@
   button {
     display: flex;
     align-items: center;
-
-    svg {
-      margin-right: 0.5rem;
-    }
-
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
     border: 1px solid #214251;
     border-radius: 50px;
     background-color: #214251;
@@ -58,6 +53,10 @@
     transition: 0.2s ease-in-out;
     padding: 0.5rem 2rem;
     cursor: pointer;
+
+    svg {
+      margin-right: 0.5rem;
+    }
 
     &:hover {
       background-color: darken(#214251, 20%);

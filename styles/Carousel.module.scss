@@ -5,7 +5,8 @@
   user-select: none;
 
   .property {
-    padding-bottom: 2.75rem;
+    padding-bottom: 4.5rem;
+    max-height: 40vh;
     max-width: 30vw;
     display: flex;
     align-items: center;
@@ -23,56 +24,57 @@
       z-index: 1;
       overflow: hidden;
     }
+  }
 
-    .propertyDetails {
-      display: flex;
-      align-items: center;
-      background: #ffffff;
-      border: 1px solid #d8dee7;
-      box-shadow: 0px 4px 80px rgba(29, 102, 153, 0.03);
-      border-radius: 10px;
-      padding: 1.125rem 2.75rem;
-      width: fit-content;
-      margin-top: -2.5rem;
-      z-index: 2;
-      position: relative;
+  .propertyDetails {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #d8dee7;
+    box-shadow: 0px 4px 80px rgba(29, 102, 153, 0.03);
+    border-radius: 10px;
+    padding: 1.125rem 2.75rem;
+    width: 60%;
+    z-index: 2;
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
 
-      p {
-        font-family: "Circular Std";
-        font-style: normal;
-        font-weight: 450;
-        font-size: 20px;
-        line-height: 25px;
-        color: #214251;
-      }
-
-      svg {
-        width: 20px;
-        height: 24px;
-        color: #214251;
-        margin-right: 0.656rem;
-      }
+    p {
+      font-family: "Circular Std";
+      font-style: normal;
+      font-weight: 450;
+      font-size: 20px;
+      line-height: 25px;
+      color: #214251;
     }
 
-    .sellerPfp {
-      width: 4.313rem;
-      position: absolute;
-      z-index: 2;
-      overflow: visible;
-      right: 0;
-      top: 0;
-      border-radius: 50%;
-      box-shadow: 0px 4px 80px rgba(29, 102, 153, 0.05);
+    svg {
+      width: 20px;
+      height: 24px;
+      color: #214251;
+      margin-right: 0.656rem;
     }
+  }
+
+  .sellerPfp {
+    width: 4.313rem;
+    position: absolute;
+    z-index: 2;
+    overflow: visible;
+    right: 0;
+    top: 0;
+    border-radius: 50%;
+    box-shadow: 0px 4px 80px rgba(29, 102, 153, 0.05);
   }
 }
 
 @media only screen and (max-width: 1800px) {
   .carousel {
-    .property {
-      .imgHolder {
-        max-width: 26vw;
-        max-height: 25vh;
+    .propertyDetails {
+      p {
+        font-size: 18px;
       }
     }
   }
@@ -80,24 +82,17 @@
 
 @media only screen and (max-width: 1700px) {
   .carousel {
-    .property {
-      .propertyDetails {
-        padding: 0.7rem 1.5rem;
-        margin-top: -1.5rem;
+    .propertyDetails {
+      padding: 0.7rem 1.5rem;
+      margin-top: -1.5rem;
 
-        p {
-          font-size: 16px;
-        }
-
-        svg {
-          width: 18px;
-          height: 21px;
-        }
+      p {
+        font-size: 16px;
       }
 
-      .imgHolder {
-        max-width: 24vw;
-        max-height: 23vh;
+      svg {
+        width: 18px;
+        height: 21px;
       }
     }
   }

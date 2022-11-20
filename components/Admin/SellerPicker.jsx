@@ -29,6 +29,7 @@ function SellerPicker() {
         handleClose={() => {
           setLibraryOpen(false);
         }}
+        amount={1}
       />
 
       <section className={styles.labels}>
