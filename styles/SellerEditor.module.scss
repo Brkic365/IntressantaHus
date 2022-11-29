@@ -1,0 +1,123 @@
+.box {
+  position: absolute;
+  width: fit-content;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  box-shadow: 40px 40px 80px rgba(3, 15, 43, 0.02);
+  border-radius: 10px;
+  padding: 3rem 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .close {
+    box-shadow: 0px 4px 80px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(30%, -30%);
+    background: white;
+    border-radius: 5px;
+    padding: 0.5rem 0.6rem;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    transition: 0.2s ease-in-out;
+
+    svg {
+      width: 1.3rem;
+      height: 1.3rem;
+    }
+
+    &:hover {
+      background-color: darken(white, 10%);
+    }
+  }
+
+  h2 {
+    margin-top: 0.8rem;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 28px;
+
+    color: #214251;
+  }
+
+  h3 {
+    margin-top: 2rem;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    color: #000000;
+    margin-right: auto;
+  }
+
+  input {
+    margin-top: 1rem;
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #c1cade;
+    border-radius: 5px;
+    resize: none;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    color: #214251;
+    padding: 0.5rem;
+  }
+
+  input {
+    margin: 1rem 0;
+  }
+
+  .buttons {
+    display: flex;
+    align-items: center;
+    place-content: space-between;
+    width: 25rem;
+    margin-top: 2rem;
+
+    button {
+      border: 1px solid #214251;
+      border-radius: 50px;
+      background-color: transparent;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: #214251;
+      transition: 0.2s ease-in-out;
+      padding: 0.5rem 2rem;
+      cursor: pointer;
+    }
+
+    .cancel {
+      &:hover {
+        background-color: #214251;
+        color: white;
+      }
+    }
+
+    .save {
+      background-color: #214251;
+      color: white;
+
+      &:hover {
+        background-color: darken(#214251, 20%);
+      }
+    }
+
+    .disabledSave {
+      opacity: 0.5;
+      cursor: default;
+
+      &:hover {
+        background-color: #214251;
+      }
+    }
+  }
+}

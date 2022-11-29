@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import styles from "../../styles/SavedPopup.module.scss";
 import Modal from "@mui/material/Modal";
 
+import { fetchData } from "../../slices/dataSlice";
+
+import { useDispatch } from "react-redux";
+
 import { AiOutlineClose } from "react-icons/ai";
 
 function SavedPopup({ open, handleClose }) {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (open) {
+      dispatch(fetchData());
+    }
+  }, [open]);
+
   return (
     <Modal
       open={open}

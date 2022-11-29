@@ -13,7 +13,7 @@
     .addFiles,
     .addSellers {
       width: 35vw;
-      min-height: 57rem;
+      min-height: 65rem;
       background: #ffffff;
       box-shadow: 40px 40px 80px rgba(3, 15, 43, 0.02);
       border-radius: 10px;
@@ -101,6 +101,15 @@
 
           &:hover {
             background-color: darken(#214251, 20%);
+          }
+        }
+
+        .disabledSave {
+          opacity: 0.5;
+          cursor: default;
+
+          &:hover {
+            background-color: #214251;
           }
         }
       }

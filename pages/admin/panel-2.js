@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../../styles/AdminPanel.module.scss";
@@ -9,12 +9,94 @@ import SellerPicker from "../../components/Admin/SellerPicker";
 
 import SavedPopup from "../../components/Admin/SavedPopup";
 
+import { useDispatch, useSelector } from "react-redux";
+
+import { updateData } from "../../slices/dataSlice";
+
 import { Fade } from "react-awesome-reveal";
 
 export default function PanelTwo() {
+  const forsaljningData = useSelector((state) => state.data.forsaljning);
+
+  const dispatch = useDispatch();
+
   const [info, setInfo] = useState(null);
 
+  const [salesThisYear, setSalesThisYear] = useState(null);
+  const [salesTotal, setSalesTotal] = useState(null);
+
+  const [dennaVeckaSellers, setDennaVeckaSellers] = useState(null);
+  const [nastaVeckaSellers, setNastaVeckaSellers] = useState(null);
+  const [forsaljningSellers, setForsaljningSellers] = useState(null);
+
   const [saved, setSaved] = useState(false);
+
+  const [canSaveVecka, setCanSaveVecka] = useState(false);
+  const [canSaveForsaljning, setCanSaveForsaljning] = useState(false);
+
+  const updateVecka = () => {
+    if (dennaVeckaSellers && nastaVeckaSellers && info) {
+      dispatch(
+        updateData({
+          id: "koksvecka",
+          info: {
+            dennaVeckaSellers,
+            nastaVeckaSellers,
+            disclaimer: info,
+          },
+        })
+      );
+
+      setSaved(true);
+    }
+  };
+
+  const updateForsaljning = () => {
+    if (salesThisYear && salesTotal && forsaljningSellers) {
+      let sellersObj = {};
+
+      forsaljningSellers.forEach((seller) => {
+        sellersObj[seller._id] = seller.sales;
+      });
+
+      dispatch(
+        updateData({
+          id: "forsaljning",
+          info: {
+            thisYear: parseInt(salesThisYear),
+            totalt: parseInt(salesTotal),
+            sellers: sellersObj,
+          },
+        })
+      );
+
+      setSaved(true);
+    }
+  };
+
+  useEffect(() => {
+    if (dennaVeckaSellers && nastaVeckaSellers && info) {
+      setCanSaveVecka(true);
+    } else {
+      setCanSaveVecka(false);
+    }
+  }, [dennaVeckaSellers, nastaVeckaSellers, info]);
+
+  useEffect(() => {
+    if (salesThisYear && salesTotal && forsaljningSellers) {
+      setCanSaveForsaljning(true);
+    } else {
+      setCanSaveForsaljning(false);
+    }
+  }, [salesThisYear, salesTotal, forsaljningSellers]);
+
+  useEffect(() => {
+    if (forsaljningData) {
+      setForsaljningSellers([...forsaljningData.info.sellers]);
+    }
+  }, [forsaljningData]);
+
+  if (!forsaljningData) return null;
 
   return (
     <div className={styles.container}>
@@ -38,9 +120,15 @@ export default function PanelTwo() {
         <section className={styles.addFiles}>
           <Fade triggerOnce cascade damping={0.2}>
             <h3>Denna vecka</h3>
-            <LibraryPicker amount={2} />
+            <LibraryPicker
+              amount={2}
+              pickedSellers={(sellers) => setDennaVeckaSellers(sellers)}
+            />
             <h3>Nästa vecka</h3>
-            <LibraryPicker amount={2} />
+            <LibraryPicker
+              amount={2}
+              pickedSellers={(sellers) => setNastaVeckaSellers(sellers)}
+            />
             <h3>Information</h3>
             <section className={styles.infoInput}>
               {" "}
@@ -53,7 +141,13 @@ export default function PanelTwo() {
             </section>
             <section className={styles.buttons}>
               <button className={styles.cancel}>avbryt</button>
-              <button className={styles.save} onClick={() => setSaved(true)}>
+              <button
+                className={`${styles.save} ${
+                  !canSaveVecka ? styles.disabledSave : undefined
+                }`}
+                onClick={updateVecka}
+                disabled={!canSaveVecka}
+              >
                 spara
               </button>
             </section>
@@ -64,15 +158,32 @@ export default function PanelTwo() {
           <Fade triggerOnce cascade damping={0.2}>
             <section className={styles.content}>
               <h3>Försäljning</h3>
-              <SellerPicker />
+              <SellerPicker
+                startingSellers={forsaljningSellers}
+                updatedSellers={(sellers) =>
+                  setForsaljningSellers([...sellers])
+                }
+              />
               <h3>Totalt i år</h3>
-              <input placeholder="455" />
+              <input
+                placeholder={forsaljningData.info.thisYear}
+                onChange={(e) => setSalesThisYear(e.target.value)}
+              />
               <h3>Totalt</h3>
-              <input placeholder="455" />
+              <input
+                placeholder={forsaljningData.info.totalt}
+                onChange={(e) => setSalesTotal(e.target.value)}
+              />
             </section>
             <section className={styles.buttons}>
               <button className={styles.cancel}>avbryt</button>
-              <button className={styles.save} onClick={() => setSaved(true)}>
+              <button
+                className={`${styles.save} ${
+                  !canSaveForsaljning ? styles.disabledSave : undefined
+                }`}
+                onClick={updateForsaljning}
+                disabled={!canSaveForsaljning}
+              >
                 spara
               </button>
             </section>

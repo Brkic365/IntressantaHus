@@ -8,9 +8,17 @@ import "simplebar-react/dist/simplebar.min.css";
 
 import { AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
 
-import all_sellers from "../../public/data/all_sellers.json";
+import { useSelector } from "react-redux";
 
-function Library({ open, handleClose, amount }) {
+function Library({
+  open,
+  handleClose,
+  amount,
+  pickedSellers,
+  takenSellers = [],
+}) {
+  const all_sellers = useSelector((state) => state.sellers.sellers);
+
   const [selected, setSelected] = useState([]);
   const [canSave, setCanSave] = useState(false);
 
@@ -35,6 +43,15 @@ function Library({ open, handleClose, amount }) {
 
     setCanSave(selected.length === amount);
   };
+
+  // Save the picked seller/sellers
+  const save = () => {
+    let seller_ids = selected.map((index) => all_sellers[index]._id);
+
+    pickedSellers(seller_ids);
+  };
+
+  if (!all_sellers) return null;
 
   return (
     <Modal
@@ -62,6 +79,12 @@ function Library({ open, handleClose, amount }) {
         <SimpleBar style={{ maxHeight: "70vh", width: "100%" }}>
           <section className={styles.grid}>
             {all_sellers.map((seller, i) => {
+              let taken = takenSellers.find(
+                (takenSeller) => takenSeller._id == seller._id
+              );
+
+              if (taken) return null;
+
               return (
                 <section
                   className={`${styles.seller} ${
@@ -97,7 +120,7 @@ function Library({ open, handleClose, amount }) {
               <button className={styles.cancel} onClick={handleClose}>
                 avbryt
               </button>
-              <button className={styles.save} onClick={handleClose}>
+              <button className={styles.save} onClick={save}>
                 spara
               </button>
             </section>

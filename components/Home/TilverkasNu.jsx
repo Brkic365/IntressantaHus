@@ -2,16 +2,22 @@ import React from "react";
 import styles from "../../styles/TilverkasNu.module.scss";
 import Carousel from "./Carousel";
 
-const CAROUSEL_DATA = {
-  name: "Villa Jönsson, Stockholm",
-  images: ["villa.webp", "villa-2.webp"],
-};
+import { useSelector } from "react-redux";
 
 function TilverkasNu() {
+  const data = useSelector((state) => state.data.tilverkasNu);
+
+  if (!data) return null;
+
   return (
     <section className={styles.tilverkasNu}>
       <h2>Tillverkas nu</h2>
-      <Carousel property={CAROUSEL_DATA} />
+      <Carousel
+        property={{
+          name: data.info.plats,
+          images: ["villa.webp", "villa-2.webp"],
+        }}
+      />
     </section>
   );
 }

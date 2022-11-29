@@ -1,35 +1,57 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "../../styles/SellerPicker.module.scss";
 
-import Library from "./Library";
+import SellerEditor from "./SellerEditor";
 
-const sellers = [
-  {
-    name: "Achraf Andrew",
-    pfp: "person1.webp",
-  },
-  {
-    name: "Achraf Andrew",
-    pfp: "person2.webp",
-  },
-  {
-    name: "Achraf Andrew",
-    pfp: "person3.webp",
-  },
-];
+function SellerPicker({ startingSellers, updatedSellers }) {
+  const [sellers, setSellers] = useState([]);
+  const [editingSeller, setEditingSeller] = useState(null);
 
-function SellerPicker() {
-  const [libraryOpen, setLibraryOpen] = useState(false);
+  const updateSeller = (old_id, new_seller) => {
+    setEditingSeller(null);
+    let sellers_temp = sellers;
+
+    let old_seller = sellers_temp.find((seller) => seller._id == old_id);
+    let index = sellers_temp.indexOf(old_seller);
+
+    sellers_temp[index] = new_seller;
+
+    console.log(sellers_temp, old_id);
+
+    setSellers([...sellers_temp]);
+  };
+
+  const removeSeller = (seller_id) => {
+    let sellers_temp = sellers.filter((seller) => seller._id != seller_id);
+
+    console.log(sellers_temp);
+
+    setSellers([...sellers_temp]);
+  };
+
+  useEffect(() => {
+    if (sellers && sellers !== startingSellers) {
+      updatedSellers(sellers);
+    }
+  }, [sellers]);
+
+  useEffect(() => {
+    setSellers(startingSellers);
+  }, [startingSellers]);
+
+  if (!sellers) return null;
 
   return (
     <section className={styles.sellerPicker}>
-      <Library
-        open={libraryOpen}
+      <SellerEditor
+        open={editingSeller !== null}
         handleClose={() => {
-          setLibraryOpen(false);
+          setEditingSeller(null);
         }}
-        amount={1}
+        seller={editingSeller}
+        updateSeller={(old_id, new_seller) => updateSeller(old_id, new_seller)}
+        takenSellers={sellers}
       />
 
       <section className={styles.labels}>
@@ -38,11 +60,14 @@ function SellerPicker() {
         <h4>Redigera</h4>
       </section>
       <section className={styles.table}>
+        {sellers.length === 0 && (
+          <section className={styles.row}>
+            <h4>Add a seller</h4>
+          </section>
+        )}
         {sellers.map((seller, i) => {
           // Check if this is the last seller
           let last = i === sellers.length - 1;
-
-          console.log(last);
 
           return (
             <section
@@ -67,13 +92,16 @@ function SellerPicker() {
                     src={`/images/admin/trash.svg`}
                     width={17.5}
                     height={18}
+                    onClick={() => {
+                      removeSeller(seller._id);
+                    }}
                     alt="Delete"
                   />
                 </button>
                 <button
                   className={styles.edit}
                   onClick={() => {
-                    setLibraryOpen(true);
+                    setEditingSeller(seller);
                   }}
                 >
                   <Image

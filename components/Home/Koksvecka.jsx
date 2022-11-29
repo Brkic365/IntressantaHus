@@ -2,31 +2,15 @@ import React from "react";
 import Image from "next/image";
 import styles from "../../styles/Koksvecka.module.scss";
 
+import { useSelector } from "react-redux";
+
 import { Fade } from "react-awesome-reveal";
 
-const dennaVecka = [
-  {
-    name: "Achraf Andrew",
-    pfp: "person1.webp",
-  },
-  {
-    name: "Achraf Andrew",
-    pfp: "person2.webp",
-  },
-];
-
-const nastaVecka = [
-  {
-    name: "Achraf Andrew",
-    pfp: "person3.webp",
-  },
-  {
-    name: "Achraf Andrew",
-    pfp: "person4.webp",
-  },
-];
-
 function Koksvecka() {
+  const data = useSelector((state) => state.data.koksvecka);
+
+  if (!data) return null;
+
   return (
     <section className={styles.koksvecka}>
       <h2>Köksvecka</h2>
@@ -38,7 +22,7 @@ function Koksvecka() {
           {
             // Map through winners of current week, and display them
 
-            dennaVecka.map((person, i) => {
+            data.info.dennaVeckaSellers.map((person, i) => {
               return (
                 <section className={styles.person} key={i}>
                   <section className={styles.pfpHolder}>
@@ -65,7 +49,7 @@ function Koksvecka() {
           {
             // Map through winners of next week, and display them
 
-            nastaVecka.map((person, i) => {
+            data.info.nastaVeckaSellers.map((person, i) => {
               return (
                 <section className={styles.person} key={i}>
                   <section className={styles.pfpHolder}>
@@ -88,10 +72,7 @@ function Koksvecka() {
 
       <Fade triggerOnce delay={300}>
         <section className={styles.disclaimer}>
-          <p>
-            Julfest planerad på kontoret den 18/12. Osa gärna direkt till
-            Emelie! God jul! 🎄
-          </p>
+          <p>{data.info.disclaimer}</p>
         </section>
       </Fade>
     </section>
