@@ -9,6 +9,10 @@ import Library from "./Library";
 
 import { AiOutlineClose } from "react-icons/ai";
 
+import { MdModeEdit } from "react-icons/md";
+
+import { motion } from "framer-motion";
+
 function SellerEditor({
   open,
   handleClose,
@@ -72,17 +76,23 @@ function SellerEditor({
           <AiOutlineClose />
         </button>
 
-        <section
+        <motion.section
           className={styles.imgHolder}
           onClick={() => setLibraryOpen(true)}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
         >
           <Image
             src={`/images/people/${newSeller.pfp}`}
             width={110}
             height={110}
+            priority
             alt={newSeller.name}
           />
-        </section>
+          <section className={styles.editImage}>
+            <MdModeEdit />
+          </section>
+        </motion.section>
         <h2>{newSeller.name}</h2>
         <h3>Försäljning</h3>
         <input placeholder={seller.sales} onChange={onChangeSales} />
