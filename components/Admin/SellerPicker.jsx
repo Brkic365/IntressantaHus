@@ -87,6 +87,7 @@ function SellerPicker({ startingSellers, updatedSellers }) {
               </section>
               <h4>{seller.name}</h4>
               <section className={styles.buttons}>
+                {/*
                 <button className={styles.delete}>
                   <Image
                     src={`/images/admin/trash.svg`}
@@ -98,6 +99,8 @@ function SellerPicker({ startingSellers, updatedSellers }) {
                     alt="Delete"
                   />
                 </button>
+                  */}
+
                 <button
                   className={styles.edit}
                   onClick={() => {
