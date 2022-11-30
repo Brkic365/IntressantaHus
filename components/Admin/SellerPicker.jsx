@@ -57,6 +57,7 @@ function SellerPicker({ startingSellers, updatedSellers }) {
       <section className={styles.labels}>
         <h4>Säljare</h4>
         <h4>Namn</h4>
+        <h4>Försäljning</h4>
         <h4>Redigera</h4>
       </section>
       <section className={styles.table}>
@@ -85,7 +86,8 @@ function SellerPicker({ startingSellers, updatedSellers }) {
                   />
                 </section>
               </section>
-              <h4>{seller.name}</h4>
+              <h4 className={styles.name}>{seller.name}</h4>
+              <h4 className={styles.sales}>{seller.sales}</h4>
               <section className={styles.buttons}>
                 {/*
                 <button className={styles.delete}>
