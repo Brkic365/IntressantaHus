@@ -19,11 +19,12 @@ function Pipeline() {
     <section className={styles.pipeline}>
       <h2>Pipeline</h2>
       <section className={styles.content}>
-        {data.map((row) => {
+        {data.map((row, i) => {
           return (
             <section
               className={styles.row}
               style={{ width: `${100 / data.length}%` }}
+              key={i}
             >
               <h3>{row}</h3>
               <section className={styles.box}>
