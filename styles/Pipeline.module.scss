@@ -21,6 +21,7 @@
     display: flex;
     align-items: flex-start;
     margin-top: 2.5rem;
+    padding: 0.5rem;
     width: 100%;
 
     .row {
@@ -73,6 +74,28 @@
 
     h2 {
       font-size: 18px;
+    }
+
+    .content {
+      display: flex;
+      align-items: flex-start;
+      margin-top: 2.5rem;
+      padding: 0.5rem;
+      width: 100%;
+
+      .row {
+        h3 {
+          font-size: 11px;
+        }
+
+        .box {
+          padding: 0.75rem;
+
+          p {
+            font-size: 11px;
+          }
+        }
+      }
     }
   }
 }
