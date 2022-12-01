@@ -18,6 +18,9 @@ export default function PanelOne() {
 
   const [pickedSeller, setPickedSeller] = useState(null);
 
+  const [senastSaltFiles, setSenastSaltFiles] = useState(null);
+  const [tilverkasNuFiles, setTilverkasNuFiles] = useState(null);
+
   const [senastSaltPlats, setSenastSaltPlats] = useState(null);
   const [tilverkasNuPlats, setTilverkasNuPlats] = useState(null);
 
@@ -32,6 +35,7 @@ export default function PanelOne() {
         updateData({
           id: "senastSalt",
           info: {
+            images: senastSaltFiles,
             seller: pickedSeller._id,
             plats: senastSaltPlats,
           },
@@ -48,6 +52,7 @@ export default function PanelOne() {
         updateData({
           id: "tilverkasNu",
           info: {
+            images: tilverkasNuFiles,
             plats: tilverkasNuPlats,
           },
         })
@@ -95,7 +100,7 @@ export default function PanelOne() {
         <section className={styles.addFiles}>
           <Fade triggerOnce cascade damping={0.2}>
             <h3>Tillverkas nu</h3>
-            <FilePicker />
+            <FilePicker updateFiles={(files) => setTilverkasNuFiles(files)} />
             <h3>Plats</h3>
             <input
               placeholder="Ange en plats..."
@@ -121,7 +126,7 @@ export default function PanelOne() {
         <section className={styles.addFiles}>
           <Fade triggerOnce cascade damping={0.2}>
             <h3>Senast sålt</h3>
-            <FilePicker />
+            <FilePicker updateFiles={(files) => setSenastSaltFiles(files)} />
             <h3>Säljare</h3>
             <LibraryPicker
               amount={1}

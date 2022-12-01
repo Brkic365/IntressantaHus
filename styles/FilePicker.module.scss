@@ -3,6 +3,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  position: relative;
 
   background: #ffffff;
   border: 2px dashed #214251;
@@ -13,6 +14,30 @@
 
   .imgHolder {
     width: 6.25rem;
+  }
+
+  .dragFileElement {
+    user-select: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: white;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s ease-in-out;
+
+    h1 {
+      font-size: 2rem;
+      color: black;
+      font-weight: bold;
+    }
   }
 
   p {
@@ -63,14 +88,27 @@
     }
   }
 
-  .sellers {
+  .sellers,
+  .images {
+    padding-bottom: 1rem;
     margin-right: auto;
+    flex-wrap: wrap;
+    gap: 0.5rem;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 
-    .seller {
+    .seller,
+    .file {
       margin-right: 1rem;
       position: relative;
+
+      .imgHolder {
+        width: 5rem;
+        height: fit-content;
+        border-radius: 14px;
+        overflow: hidden;
+      }
+
       svg {
         position: absolute;
         top: -0.15rem;
@@ -89,6 +127,11 @@
           transform: scale(0.95);
         }
       }
+    }
+
+    .file svg {
+      top: -0.5rem;
+      right: -0.5rem;
     }
   }
 }

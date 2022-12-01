@@ -15,7 +15,7 @@ function TilverkasNu() {
       <Carousel
         property={{
           name: data.info.plats,
-          images: ["villa.webp", "villa-2.webp"],
+          images: data.info.images,
         }}
       />
     </section>

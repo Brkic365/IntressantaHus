@@ -17,7 +17,7 @@ function SenastSalt() {
         property={{
           name: data.info.plats,
           seller_pfp: data.info.seller.pfp,
-          images: ["villa.webp", "villa-2.webp"],
+          images: data.info.images,
         }}
       />
     </section>

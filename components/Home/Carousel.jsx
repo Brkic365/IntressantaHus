@@ -45,7 +45,7 @@ function Carousel({ property }) {
               <section className={styles.property}>
                 <section className={styles.imgHolder}>
                   <Image
-                    src={`/images/properties/${imgSrc}`}
+                    src={imgSrc}
                     width={534}
                     height={283}
                     layout="responsive"
