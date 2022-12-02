@@ -25,6 +25,7 @@
     "react-dom": "18.2.0",
     "react-drag-drop-files": "^2.3.8",
     "react-icons": "^4.6.0",
+    "react-loading-skeleton": "^3.1.0",
     "react-redux": "^8.0.5",
     "sass": "^1.56.1",
     "simplebar-react": "^2.4.3",
