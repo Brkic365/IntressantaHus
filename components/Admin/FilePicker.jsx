@@ -71,7 +71,7 @@ function FilePicker({ updateFiles }) {
         () => {
           // download url
           getDownloadURL(uploadTask.snapshot.ref).then((url) => {
-            setFileUrls((prev) => [...prev, url]);
+            setFileUrls((prev) => [...prev, { url, name: file.name }]);
           });
         }
       );
@@ -79,7 +79,18 @@ function FilePicker({ updateFiles }) {
   };
 
   const removeImage = (i) => {
-    let url = fileUrls[i];
+    let file = fileUrls[i];
+
+    const storageRef = ref(storage, `/files/${file.name}`);
+
+    deleteObject(storageRef)
+      .then(() => {
+        console.log("Deleted");
+        setFileUrls((prev) => prev.filter((image) => image.url !== file.url));
+      })
+      .catch((err) => console.log(err));
+
+    /*
 
     let pictureRef = storage.refFromURL(url);
 
@@ -92,6 +103,8 @@ function FilePicker({ updateFiles }) {
       .catch((err) => {
         console.log(err);
       });
+
+      */
   };
 
   useEffect(() => {
@@ -148,12 +161,12 @@ function FilePicker({ updateFiles }) {
             <section className={styles.file} key={i}>
               <section className={styles.imgHolder}>
                 <Image
-                  src={fileUrl}
+                  src={fileUrl.url}
                   width={120}
                   height={120}
                   layout="responsive"
                   objectFit="contain"
-                  alt="Image"
+                  alt={fileUrl.name}
                 />
               </section>
               <AiFillCloseCircle onClick={() => removeImage(i)} />

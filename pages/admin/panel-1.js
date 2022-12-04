@@ -7,14 +7,21 @@ import FilePicker from "../../components/Admin/FilePicker";
 import LibraryPicker from "../../components/Admin/LibraryPicker";
 import SavedPopup from "../../components/Admin/SavedPopup";
 
-import { useDispatch } from "react-redux";
+import { ref, deleteObject } from "firebase/storage";
+
+import { useDispatch, useSelector } from "react-redux";
 
 import { updateData } from "../../slices/dataSlice";
 
 import { Fade } from "react-awesome-reveal";
 
+import storage from "../../lib/firebaseConfig.js";
+
 export default function PanelOne() {
   const dispatch = useDispatch();
+
+  const oldSenastSaltData = useSelector((state) => state.data.senastSalt);
+  const oldTilverkasNuData = useSelector((state) => state.data.tilverkasNu);
 
   const [pickedSeller, setPickedSeller] = useState(null);
 
@@ -31,6 +38,18 @@ export default function PanelOne() {
 
   const updateSenastSalt = () => {
     if (pickedSeller && senastSaltPlats) {
+      let storageRef = null;
+
+      oldSenastSaltData.info.images.forEach((image) => {
+        let index = senastSaltFiles.indexOf((file) => file.name === image.name);
+
+        if (index === -1) {
+          storageRef = ref(storage, `/files/${image.name}`);
+
+          deleteObject(storageRef).catch(() => {});
+        }
+      });
+
       dispatch(
         updateData({
           id: "senastSalt",
@@ -48,6 +67,20 @@ export default function PanelOne() {
 
   const updateTilverkasNu = () => {
     if (tilverkasNuPlats) {
+      let storageRef = null;
+
+      oldTilverkasNuData.info.images.forEach((image) => {
+        let index = tilverkasNuFiles.indexOf(
+          (file) => file.name === image.name
+        );
+
+        if (index === -1) {
+          storageRef = ref(storage, `/files/${image.name}`);
+
+          deleteObject(storageRef).catch(() => {});
+        }
+      });
+
       dispatch(
         updateData({
           id: "tilverkasNu",

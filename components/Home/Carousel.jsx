@@ -38,14 +38,14 @@ function Carousel({ property }) {
         pagination={true}
         modules={[Autoplay, Pagination]}
       >
-        {property.images.map((imgSrc, i) => {
+        {property.images.map((img, i) => {
           // Map through properties and add each one to the carousel
           return (
             <SwiperSlide key={i}>
               <section className={styles.property}>
                 <section className={styles.imgHolder}>
                   <Image
-                    src={imgSrc}
+                    src={img.url}
                     width={534}
                     height={283}
                     layout="responsive"
