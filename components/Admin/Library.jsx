@@ -19,8 +19,24 @@ function Library({
 }) {
   const all_sellers = useSelector((state) => state.sellers.sellers);
 
+  const [allSellers, setAllSellers] = useState(all_sellers);
+
   const [selected, setSelected] = useState([]);
   const [canSave, setCanSave] = useState(false);
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+
+    if (e.target.value === "") {
+      setAllSellers(all_sellers);
+    } else {
+      setAllSellers(
+        all_sellers.filter((seller) =>
+          seller.name.toLowerCase().includes(e.target.value.toLowerCase())
+        )
+      );
+    }
+  };
 
   const selectSeller = (i) => {
     // If seller is already selected, remove him
@@ -72,13 +88,16 @@ function Library({
             <h3>Medarbetare</h3>
             <section className={styles.searchbar}>
               <AiOutlineSearch />
-              <input placeholder="Sök efter medarbetare" />
+              <input
+                placeholder="Sök efter medarbetare"
+                onChange={handleSearch}
+              />
             </section>
           </section>
         </section>
         <SimpleBar style={{ maxHeight: "70vh", width: "100%" }}>
           <section className={styles.grid}>
-            {all_sellers.map((seller, i) => {
+            {allSellers.map((seller, i) => {
               let taken = takenSellers.find(
                 (takenSeller) => takenSeller._id == seller._id
               );
