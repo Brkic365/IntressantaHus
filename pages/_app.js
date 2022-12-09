@@ -11,6 +11,7 @@ import { useRouter } from "next/router";
 
 import { fetchData } from "../slices/dataSlice";
 import { fetchSellers } from "../slices/sellersSlice";
+import { fetchAsana } from "../slices/asanaSlice";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -18,6 +19,7 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     store.dispatch(fetchData());
     store.dispatch(fetchSellers());
+    store.dispatch(fetchAsana());
   }, []);
 
   return (
