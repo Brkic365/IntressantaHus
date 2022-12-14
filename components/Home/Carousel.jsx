@@ -65,7 +65,7 @@ function Carousel({ property }) {
         {property.seller_pfp && (
           <section className={styles.sellerPfp}>
             <Image
-              src={`/images/people/${property.seller_pfp}`}
+              src={`https://wsrv.nl/?url=${property.seller_pfp}&w=120&h=120&fit=cover&a=center`}
               width={69}
               height={69}
               layout="responsive"

@@ -83,7 +83,7 @@ function SellerEditor({
           whileTap={{ scale: 0.95 }}
         >
           <Image
-            src={`/images/people/${newSeller.pfp}`}
+            src={`https://wsrv.nl/?url=${newSeller.pfp}&w=120&h=120&fit=cover&a=center`}
             width={110}
             height={110}
             priority

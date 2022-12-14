@@ -54,7 +54,12 @@
         flex-direction: column;
 
         .pfpHolder {
-          width: 3.438rem;
+          min-width: 3.438rem;
+          max-width: 3.438rem;
+          min-height: 3.438rem;
+          max-height: 3.438rem;
+          border-radius: 50%;
+          overflow: hidden;
         }
 
         p {

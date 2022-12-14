@@ -101,6 +101,7 @@
     gap: 2rem;
 
     .seller {
+      position: relative;
       user-select: none;
       display: flex;
       align-items: center;
@@ -111,8 +112,22 @@
       border: 1px solid #c5cad1;
       border-radius: 20px;
       cursor: pointer;
+      height: 12rem;
+
+      .pfpHolder {
+        min-width: 5.5rem;
+        max-width: 5.5rem;
+        min-height: 5.5rem;
+        max-height: 5.5rem;
+        border-radius: 50%;
+        overflow: hidden;
+      }
 
       p {
+        top: 6.75rem;
+        position: absolute;
+        text-align: center;
+        width: 95%;
         margin-top: 1rem;
         font-style: normal;
         font-weight: 450;

@@ -79,7 +79,7 @@ function SellerPicker({ startingSellers, updatedSellers }) {
               <section className={styles.pfpHolder}>
                 <section className={styles.pfp}>
                   <Image
-                    src={`/images/people/${seller.pfp}`}
+                    src={`https://wsrv.nl/?url=${seller.pfp}&w=120&h=120&fit=cover&a=center`}
                     width={55}
                     height={55}
                     alt={seller.name}

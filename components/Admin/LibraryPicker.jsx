@@ -62,14 +62,16 @@ function LibraryPicker({ amount, pickedSellers }) {
         {sellers.map((seller, i) => {
           return (
             <section className={styles.seller} key={i}>
-              <Image
-                src={`/images/people/${seller.pfp}`}
-                width={69}
-                height={69}
-                layout="responsive"
-                objectFit="contain"
-                alt={seller.name}
-              />
+              <section className={styles.imgHolder}>
+                <Image
+                  src={`https://wsrv.nl/?url=${seller.pfp}&w=120&h=120&fit=cover&a=center`}
+                  width={69}
+                  height={69}
+                  layout="responsive"
+                  objectFit="contain"
+                  alt={seller.name}
+                />
+              </section>
               <AiFillCloseCircle onClick={() => removeSeller(seller._id)} />
             </section>
           );

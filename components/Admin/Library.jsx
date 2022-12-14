@@ -121,12 +121,13 @@ function Library({
                 >
                   <section className={styles.pfpHolder}>
                     <Image
-                      src={`/images/people/${seller.pfp}`}
+                  src={`https://wsrv.nl/?url=${seller.pfp}&w=120&h=120&fit=cover&a=center`}
                       width={110}
                       height={110}
                       layout="responsive"
                       objectFit="contain"
                       alt={seller.name}
+                      className={styles.pfp}
                     />
                   </section>
                   <p>{seller.name}</p>

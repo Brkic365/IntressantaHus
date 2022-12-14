@@ -62,9 +62,10 @@
 
   .sellerPfp {
     width: 4.313rem;
+    height: 4.313rem;
     position: absolute;
     z-index: 2;
-    overflow: visible;
+    overflow: hidden;
     right: 0;
     top: 0;
     border-radius: 50%;

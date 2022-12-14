@@ -37,6 +37,12 @@
   }
 
   .imgHolder {
+    border-radius: 10px;
+    min-width: 6.5rem;
+    max-width: 6.5rem;
+    min-height: 6.5rem;
+    max-height: 6.5rem;
+    overflow: hidden;
     cursor: pointer;
     position: relative;
     .editImage {

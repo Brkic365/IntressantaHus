@@ -29,7 +29,7 @@ function Koksvecka() {
                     <section className={styles.person} key={i}>
                       <section className={styles.pfpHolder}>
                         <Image
-                          src={`/images/people/${person.pfp}`}
+                          src={`https://wsrv.nl/?url=${person.pfp}&w=120&h=120&fit=cover&a=center`}
                           width={55}
                           height={55}
                           layout="responsive"
@@ -65,7 +65,7 @@ function Koksvecka() {
                     <section className={styles.person} key={i}>
                       <section className={styles.pfpHolder}>
                         <Image
-                          src={`/images/people/${person.pfp}`}
+                          src={`https://wsrv.nl/?url=${person.pfp}&w=120&h=120&fit=cover&a=center`}
                           width={55}
                           height={55}
                           layout="responsive"
