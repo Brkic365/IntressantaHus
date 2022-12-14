@@ -67,7 +67,7 @@ function Library({
     pickedSellers(seller_ids);
   };
 
-  if (!all_sellers) return null;
+  if (!allSellers) return null;
 
   return (
     <Modal

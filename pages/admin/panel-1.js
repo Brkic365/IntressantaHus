@@ -40,15 +40,17 @@ export default function PanelOne() {
     if (pickedSeller && senastSaltPlats) {
       let storageRef = null;
 
-      oldSenastSaltData.info.images.forEach((image) => {
-        let index = senastSaltFiles.indexOf((file) => file.name === image.name);
+      if(oldSenastSaltData.info.images) {
+        oldSenastSaltData.info.images.forEach((image) => {
+          let index = senastSaltFiles.indexOf((file) => file.name === image.name);
 
-        if (index === -1) {
-          storageRef = ref(storage, `/files/${image.name}`);
+          if (index === -1) {
+            storageRef = ref(storage, `/files/${image.name}`);
 
-          deleteObject(storageRef).catch(() => {});
-        }
-      });
+            deleteObject(storageRef).catch(() => {});
+          }
+        });
+      }
 
       dispatch(
         updateData({
@@ -69,17 +71,20 @@ export default function PanelOne() {
     if (tilverkasNuPlats) {
       let storageRef = null;
 
-      oldTilverkasNuData.info.images.forEach((image) => {
-        let index = tilverkasNuFiles.indexOf(
-          (file) => file.name === image.name
-        );
+      if(oldTilverkasNuData.info.images) {
+        oldTilverkasNuData.info.images.forEach((image) => {
+          let index = tilverkasNuFiles.indexOf(
+            (file) => file.name === image.name
+          );
+  
+          if (index === -1) {
+            storageRef = ref(storage, `/files/${image.name}`);
+  
+            deleteObject(storageRef).catch(() => {});
+          }
+        });
+      }
 
-        if (index === -1) {
-          storageRef = ref(storage, `/files/${image.name}`);
-
-          deleteObject(storageRef).catch(() => {});
-        }
-      });
 
       dispatch(
         updateData({

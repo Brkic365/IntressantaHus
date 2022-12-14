@@ -71,6 +71,7 @@ function FilePicker({ updateFiles }) {
         () => {
           // download url
           getDownloadURL(uploadTask.snapshot.ref).then((url) => {
+            console.log(url);
             setFileUrls((prev) => [...prev, { url, name: file.name }]);
           });
         }
