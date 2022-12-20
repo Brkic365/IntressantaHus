@@ -140,3 +140,49 @@
     }
   }
 }
+
+@media only screen and (min-width: 2150px) {
+  .forsaljning {
+    h2 {
+      font-size: 2rem;
+    }
+
+    .content {
+      .chart {
+        .person {
+          .pfpHolder {
+            min-width: 4.5rem;
+            max-width: 4.5rem;
+            min-height: 4.5rem;
+            max-height: 4.5rem;
+          }
+  
+          .bar {
+            margin: 1rem 0;
+            border-radius: 12px 12px 0px 0px;
+            width: 4.5rem;
+          }
+  
+          p {
+            font-size: 1.25rem;
+          }
+        }
+      }
+
+      .info {
+        .infoBlock {
+          width: 12rem;
+
+          p {
+            font-size: 1.25rem;
+          }
+
+          h3 {
+            margin-top: 1rem;
+            font-size: 3rem;
+          }
+        }
+      }
+    }
+  }
+}

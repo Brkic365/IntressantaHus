@@ -99,3 +99,27 @@
     }
   }
 }
+
+@media only screen and (min-width: 2150px) {
+  .pipeline {
+    h2 {
+      font-size: 2rem;
+    }
+
+    .content {
+      .row {
+        h3 {
+          font-size: 1rem;
+        }
+
+        .box {
+          padding: 1.5rem;
+
+          p {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+}

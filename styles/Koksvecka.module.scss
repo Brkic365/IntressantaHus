@@ -154,3 +154,84 @@
     }
   }
 }
+
+@media only screen and (min-width: 2100px) {
+  .koksvecka {
+    h2 {
+      font-size: 2rem;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+    }
+
+    p {
+      font-size: 0.8rem;
+    }
+
+    .vecka {
+      margin-top: 1.5rem;
+      .people {
+        .person {
+          .pfpHolder {
+            min-width: 4rem;
+            max-width: 4rem;
+            min-height: 4rem;
+            max-height: 4rem;
+          }
+
+          p {
+            margin-top: 0.75rem;
+          }
+        }
+      }
+    }
+
+    .disclaimer {
+      padding: 1rem;
+      p {
+        font-size: 1.1rem;
+        line-height: 1.6rem;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 2150px) {
+  .koksvecka {
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    .vecka {
+      margin-top: 2.25rem;
+      .people {
+        .person {
+          .pfpHolder {
+            min-width: 5rem;
+            max-width: 5rem;
+            min-height: 5rem;
+            max-height: 5rem;
+          }
+
+          p {
+            margin-top: 0.75rem;
+          }
+        }
+      }
+    }
+
+    .disclaimer {
+      padding: 1rem;
+      p {
+        font-size: 1.1rem;
+        line-height: 1.6rem;
+      }
+    }
+  }
+}

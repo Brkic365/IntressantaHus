@@ -100,3 +100,26 @@
     }
   }
 }
+
+@media only screen and (min-width: 2100px) {
+  .carousel {
+    .propertyDetails {
+      padding: 1.5rem 2rem;
+      margin-top: -1.5rem;
+
+      p {
+        font-size: 1.5rem;
+      }
+
+      svg {
+        width: 24px;
+        height: 27px;
+      }
+    }
+
+    .sellerPfp {
+      width: 6rem;
+      height: 6rem;
+    }
+  }
+}
