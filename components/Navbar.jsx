@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 
 const LINKS = [
   {
-    href: "/admin/dashbard",
+    href: "/",
     name: "Dashboard",
   },
   {
