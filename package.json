@@ -27,9 +27,14 @@
     "react-drag-drop-files": "^2.3.8",
     "react-icons": "^4.6.0",
     "react-loading-skeleton": "^3.1.0",
+    "react-pdf": "^5      .2.0",
     "react-redux": "^8.0.5",
     "sass": "^1.56.1",
     "simplebar-react": "^2.4.3",
     "swiper": "^8.4.4"
+  },
+  "devDependencies": {
+    "webpack-cli": "^5.0.1",
+    "file-loader": "^6.2.0"
   }
 }

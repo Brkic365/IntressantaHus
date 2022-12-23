@@ -29,7 +29,7 @@ function Carousel({ property }) {
         }}
         spaceBetween={125}
         slidesPerView={"auto"}
-        loop={true}
+        loop={property.images.length > 1}
         initialSlide={0}
         autoplay={{
           delay: 3000,

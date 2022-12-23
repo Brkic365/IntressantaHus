@@ -92,9 +92,7 @@ function FilePicker({ updateFiles }) {
       .catch((err) => console.log(err));
 
     /*
-
     let pictureRef = storage.refFromURL(url);
-
     pictureRef
       .delete()
       .then(() => {
@@ -104,7 +102,6 @@ function FilePicker({ updateFiles }) {
       .catch((err) => {
         console.log(err);
       });
-
       */
   };
 
