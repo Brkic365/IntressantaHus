@@ -43,16 +43,7 @@ function Carousel({ property }) {
           return (
             <SwiperSlide key={i}>
               <section className={styles.property}>
-                <section className={styles.imgHolder}>
-                  <Image
-                    src={img.url}
-                    width={534}
-                    height={283}
-                    layout="responsive"
-                    objectFit="contain"
-                    alt={property.name}
-                  />
-                </section>
+                <section className={styles.imgHolder} style={{backgroundImage: `url(${img.url})`}}/>
               </section>
             </SwiperSlide>
           );
