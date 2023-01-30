@@ -27,7 +27,7 @@ function Carousel({ property }) {
           "--swiper-pagination-bullet-inactive-color": "#DFE8E8",
           "--swiper-pagination-bullet-inactive-opacity": "1",
         }}
-        spaceBetween={125}
+        spaceBetween={50}
         slidesPerView={"auto"}
         loop={property.images.length > 1}
         initialSlide={0}

@@ -7,24 +7,24 @@
   .property {
     padding-bottom: 4.5rem;
     max-height: 40vh;
-    width: 12rem;
+    width: 24rem;
     display: flex;
     align-items: center;
     flex-direction: column;
     overflow: visible;
     padding-top: 3rem;
-    margin-left: 125px;
+    margin-left: 50px;
 
     .imgHolder {
       border-radius: 10px 10px 0 0;
       width: 100%;
-      height: calc(12rem * 1.414);
+      height: calc(24rem * 0.7);
       background-size: cover;
     }
   }
 
   .propertyDetails {
-    margin-left: 125px;
+    margin-left: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -35,7 +35,7 @@
     padding: 0.5rem 1.25rem;
     z-index: 2;
     position: absolute;
-    width: 12rem;
+    width: 24rem;
     bottom: 2rem;
 
     p {
@@ -73,19 +73,19 @@
 @media only screen and (max-width: 1800px) {
   .carousel {
     .property {
-      width: 11rem;
-  
+      width: 22rem;
+
       .imgHolder {
-        height: calc(11rem * 1.414);
+        height: calc(22rem * 0.7);
       }
     }
 
     .propertyDetails {
       padding: 0.8rem;
-      width: 11rem;
+      width: 22rem;
 
       p {
-        font-size: 0.9rem;
+        font-size: 1rem;
       }
     }
 
@@ -99,19 +99,19 @@
 @media only screen and (max-width: 1700px) {
   .carousel {
     .property {
-      width: 10rem;
-  
+      width: 20rem;
+
       .imgHolder {
-        height: calc(10rem * 1.414);
+        height: calc(20rem * 0.7);
       }
     }
 
     .propertyDetails {
       padding: 0.8rem;
-      width: 10rem;
+      width: 20rem;
 
       p {
-        font-size: 0.8rem;
+        font-size: 1rem;
       }
     }
 
@@ -125,17 +125,17 @@
 @media only screen and (min-width: 2100px) {
   .carousel {
     .property {
-      width: 14rem;
-  
+      width: 26rem;
+
       .imgHolder {
-        height: calc(14rem * 1.414);
+        height: calc(26rem * 0.7);
       }
     }
 
     .propertyDetails {
       padding: 1rem;
       margin-top: -1.5rem;
-      width: 14rem;
+      width: 26rem;
 
       p {
         font-size: 1.2rem;
