@@ -76,7 +76,11 @@ function Forsaljning() {
         <section className={styles.info}>
           <Fade triggerOnce delay={500}>
             <section className={styles.infoBlock}>
-              <p>2022</p>
+              <p>{data ? (
+                  data.info.yearTitle
+                ) : (
+                  <Skeleton width={"60px"} height={"40px"} />
+                )}</p>
               <h3>
                 {data ? (
                   data.info.thisYear
@@ -89,7 +93,11 @@ function Forsaljning() {
 
           <Fade triggerOnce delay={600}>
             <section className={styles.infoBlock}>
-              <p>Totalt</p>
+              <p>{data ? (
+                  data.info.totalTitle
+                ) : (
+                  <Skeleton width={"60px"} height={"40px"} />
+                )}</p>
               <h3>
                 {data ? (
                   data.info.totalt

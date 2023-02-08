@@ -3,28 +3,32 @@
   position: relative;
   overflow: visible;
   user-select: none;
+  box-sizing:border-box;
 
   .property {
     padding-bottom: 4.5rem;
     max-height: 40vh;
-    width: 24rem;
+    width: 26rem;
     display: flex;
     align-items: center;
     flex-direction: column;
     overflow: visible;
-    padding-top: 3rem;
-    margin-left: 50px;
+    padding-top: 1rem;
+    margin-right: 0 !important;
+    box-sizing:border-box;
+    margin-left: 100px;
+
 
     .imgHolder {
       border-radius: 10px 10px 0 0;
       width: 100%;
-      height: calc(24rem * 0.7);
+      height: calc(26rem * 0.7);
       background-size: cover;
     }
   }
 
   .propertyDetails {
-    margin-left: 50px;
+    margin-left: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -35,7 +39,7 @@
     padding: 0.5rem 1.25rem;
     z-index: 2;
     position: absolute;
-    width: 24rem;
+    width: 26rem;
     bottom: 2rem;
 
     p {
@@ -56,10 +60,10 @@
   }
 
   .sellerPfp {
-    margin-right: 35px;
-    margin-top: 30px;
-    width: 3.5rem;
-    height: 3.5rem;
+    margin-right: 25px;
+    margin-top: 0px;
+    width: 4.5rem;
+    height: 4.5rem;
     position: absolute;
     z-index: 2;
     overflow: hidden;
@@ -73,16 +77,18 @@
 @media only screen and (max-width: 1800px) {
   .carousel {
     .property {
-      width: 22rem;
+      width: 24rem;
+      margin-left: 75px;
 
       .imgHolder {
-        height: calc(22rem * 0.7);
+        height: calc(24rem * 0.7);
       }
     }
 
     .propertyDetails {
       padding: 0.8rem;
-      width: 22rem;
+      width: 24rem;
+      margin-left: 75px;
 
       p {
         font-size: 1rem;
@@ -90,8 +96,9 @@
     }
 
     .sellerPfp {
-      width: 3rem;
-      height: 3rem;
+      margin-right: 35px;
+      width: 4rem;
+      height: 4rem;
     }
   }
 }
@@ -99,16 +106,18 @@
 @media only screen and (max-width: 1700px) {
   .carousel {
     .property {
-      width: 20rem;
+      width: 23rem;
+      margin-left: 50px;
 
       .imgHolder {
-        height: calc(20rem * 0.7);
+        height: calc(23rem * 0.7);
       }
     }
 
     .propertyDetails {
       padding: 0.8rem;
-      width: 20rem;
+      width: 23rem;
+      margin-left: 50px;
 
       p {
         font-size: 1rem;
@@ -116,8 +125,9 @@
     }
 
     .sellerPfp {
-      width: 3rem;
-      height: 3rem;
+      margin-right: 25px;
+      width: 3.5rem;
+      height: 3.5rem;
     }
   }
 }
@@ -125,17 +135,19 @@
 @media only screen and (min-width: 2100px) {
   .carousel {
     .property {
-      width: 26rem;
+      width: 30rem;
+      margin-left: 75px;
 
       .imgHolder {
-        height: calc(26rem * 0.7);
+        height: calc(30rem * 0.7);
       }
     }
 
     .propertyDetails {
+      margin-left: 75px;
       padding: 1rem;
       margin-top: -1.5rem;
-      width: 26rem;
+      width: 30rem;
 
       p {
         font-size: 1.2rem;
@@ -148,8 +160,9 @@
     }
 
     .sellerPfp {
-      width: 6rem;
-      height: 6rem;
+      margin-right: 50px;
+      width: 5rem;
+      height: 5rem;
     }
   }
 }

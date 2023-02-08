@@ -23,7 +23,10 @@ export default function PanelTwo() {
   const [info, setInfo] = useState(null);
 
   const [salesThisYear, setSalesThisYear] = useState(null);
+  const [yearTitle, setYearTitle] = useState(null);
+
   const [salesTotal, setSalesTotal] = useState(null);
+  const [salesTotalTitle, setSalesTotalTitle] = useState(null);
 
   const [dennaVeckaSellers, setDennaVeckaSellers] = useState(null);
   const [nastaVeckaSellers, setNastaVeckaSellers] = useState(null);
@@ -52,7 +55,7 @@ export default function PanelTwo() {
   };
 
   const updateForsaljning = () => {
-    if (salesThisYear && salesTotal && forsaljningSellers) {
+    if (salesThisYear && salesTotal && forsaljningSellers && yearTitle && salesTotalTitle) {
       let sellersObj = {};
 
       forsaljningSellers.forEach((seller) => {
@@ -63,6 +66,8 @@ export default function PanelTwo() {
         updateData({
           id: "forsaljning",
           info: {
+            yearTitle: yearTitle,
+            totalTitle: salesTotalTitle,
             thisYear: parseInt(salesThisYear),
             totalt: parseInt(salesTotal),
             sellers: sellersObj,
@@ -166,10 +171,20 @@ export default function PanelTwo() {
               />
               <h3>Totalt i år</h3>
               <input
+                style={{marginBottom: "0"}}
+                placeholder={forsaljningData.info.yearTitle}
+                onChange={(e) => setYearTitle(e.target.value)}
+              />
+              <input
                 placeholder={forsaljningData.info.thisYear}
                 onChange={(e) => setSalesThisYear(e.target.value)}
               />
               <h3>Totalt</h3>
+              <input
+                style={{marginBottom: "0"}}
+                placeholder={forsaljningData.info.totalTitle}
+                onChange={(e) => setSalesTotalTitle(e.target.value)}
+              />
               <input
                 placeholder={forsaljningData.info.totalt}
                 onChange={(e) => setSalesTotal(e.target.value)}

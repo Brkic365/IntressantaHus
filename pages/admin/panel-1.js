@@ -38,20 +38,6 @@ export default function PanelOne() {
 
   const updateSenastSalt = () => {
     if (pickedSeller && senastSaltPlats) {
-      let storageRef = null;
-
-      if(oldSenastSaltData.info.images) {
-        oldSenastSaltData.info.images.forEach((image) => {
-          let index = senastSaltFiles.indexOf((file) => file.name === image.name);
-
-          if (index === -1) {
-            storageRef = ref(storage, `/files/${image.name}`);
-
-            deleteObject(storageRef).catch(() => {});
-          }
-        });
-      }
-
       dispatch(
         updateData({
           id: "senastSalt",
@@ -69,22 +55,6 @@ export default function PanelOne() {
 
   const updateTilverkasNu = () => {
     if (tilverkasNuPlats) {
-      let storageRef = null;
-
-      if(oldTilverkasNuData.info.images) {
-        oldTilverkasNuData.info.images.forEach((image) => {
-          let index = tilverkasNuFiles.indexOf(
-            (file) => file.name === image.name
-          );
-  
-          if (index === -1) {
-            storageRef = ref(storage, `/files/${image.name}`);
-  
-            deleteObject(storageRef).catch(() => {});
-          }
-        });
-      }
-
 
       dispatch(
         updateData({
@@ -116,6 +86,22 @@ export default function PanelOne() {
     }
   }, [tilverkasNuPlats]);
 
+  console.log(oldTilverkasNuData);
+
+  useEffect(() => {
+    if(oldTilverkasNuData) {
+      setTilverkasNuPlats(oldTilverkasNuData.info.plats);
+    } 
+  }, [oldTilverkasNuData])
+
+  useEffect(() => {
+    if(oldSenastSaltData) {
+      setSenastSaltPlats(oldSenastSaltData.info.plats);
+    } 
+  }, [oldSenastSaltData])
+
+  if (!oldTilverkasNuData) return null;
+
   return (
     <div className={styles.container}>
       <Head>
@@ -138,10 +124,11 @@ export default function PanelOne() {
         <section className={styles.addFiles}>
           <Fade triggerOnce cascade damping={0.2}>
             <h3>Tillverkas nu</h3>
-            <FilePicker updateFiles={(files) => setTilverkasNuFiles(files)} />
+            <FilePicker updateFiles={(files) => setTilverkasNuFiles(files)} startingFiles={oldTilverkasNuData.info.images || []} />
             <h3>Plats</h3>
             <input
               placeholder="Ange en plats..."
+              defaultValue={oldTilverkasNuData.info.plats || ""}
               onChange={(e) => {
                 setTilverkasNuPlats(e.target.value);
               }}
@@ -164,15 +151,17 @@ export default function PanelOne() {
         <section className={styles.addFiles}>
           <Fade triggerOnce cascade damping={0.2}>
             <h3>Senast sålt</h3>
-            <FilePicker updateFiles={(files) => setSenastSaltFiles(files)} />
+            <FilePicker updateFiles={(files) => setSenastSaltFiles(files)} startingFiles={oldSenastSaltData.info.images || []}/>
             <h3>Säljare</h3>
             <LibraryPicker
               amount={1}
               pickedSellers={(sellers) => setPickedSeller(sellers[0])}
+              startingSeller={oldSenastSaltData.info.seller || null}
             />
             <h3>Plats</h3>
             <input
               placeholder="Ange en plats..."
+              defaultValue={oldSenastSaltData.info.plats || ""}
               onChange={(e) => {
                 setSenastSaltPlats(e.target.value);
               }}

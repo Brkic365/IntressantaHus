@@ -9,11 +9,11 @@ import { AiFillCloseCircle } from "react-icons/ai";
 
 import { useSelector } from "react-redux";
 
-function LibraryPicker({ amount, pickedSellers }) {
+function LibraryPicker({ amount, pickedSellers, startingSeller }) {
   const all_sellers = useSelector((state) => state.sellers.sellers);
 
   const [libraryOpen, setLibraryOpen] = useState(false);
-  const [sellers, setSellers] = useState([]);
+  const [sellers, setSellers] = useState([startingSeller]);
 
   const formatSellers = (seller_ids) => {
     setLibraryOpen(false);

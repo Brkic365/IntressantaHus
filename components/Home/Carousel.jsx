@@ -27,7 +27,7 @@ function Carousel({ property }) {
           "--swiper-pagination-bullet-inactive-color": "#DFE8E8",
           "--swiper-pagination-bullet-inactive-opacity": "1",
         }}
-        spaceBetween={50}
+        spaceBetween={100}
         slidesPerView={"auto"}
         loop={property.images.length > 1}
         initialSlide={0}
@@ -41,7 +41,7 @@ function Carousel({ property }) {
         {property.images.map((img, i) => {
           // Map through properties and add each one to the carousel
           return (
-            <SwiperSlide key={i}>
+            <SwiperSlide key={i} style={{width: "fit-content"}}>
               <section className={styles.property}>
                 <section className={styles.imgHolder} style={{backgroundImage: `url(${img.url})`}}/>
               </section>

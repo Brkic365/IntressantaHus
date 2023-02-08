@@ -15,10 +15,10 @@ import {
   deleteObject,
 } from "firebase/storage";
 
-function FilePicker({ updateFiles }) {
+function FilePicker({ updateFiles, startingFiles = [] }) {
   const hiddenFileInput = useRef(null);
 
-  const [fileUrls, setFileUrls] = useState([]);
+  const [fileUrls, setFileUrls] = useState(startingFiles);
   const [dragActive, setDragActive] = useState(false);
 
   // handle drag events
