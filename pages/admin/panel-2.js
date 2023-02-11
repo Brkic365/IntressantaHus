@@ -17,6 +17,7 @@ import { Fade } from "react-awesome-reveal";
 
 export default function PanelTwo() {
   const forsaljningData = useSelector((state) => state.data.forsaljning);
+  const oldKoksveckaData = useSelector((state) => state.data.koksvecka);
 
   const dispatch = useDispatch();
 
@@ -101,7 +102,12 @@ export default function PanelTwo() {
     }
   }, [forsaljningData]);
 
+
+
   if (!forsaljningData) return null;
+
+
+  console.log("ae: ", oldKoksveckaData);
 
   return (
     <div className={styles.container}>
@@ -128,11 +134,13 @@ export default function PanelTwo() {
             <LibraryPicker
               amount={2}
               pickedSellers={(sellers) => setDennaVeckaSellers(sellers)}
+              startingSellers={oldKoksveckaData.info.dennaVeckaSellers || null}
             />
             <h3>Nästa vecka</h3>
             <LibraryPicker
               amount={2}
               pickedSellers={(sellers) => setNastaVeckaSellers(sellers)}
+              startingSellers={oldKoksveckaData.info.nastaVeckaSellers || null}
             />
             <h3>Information</h3>
             <section className={styles.infoInput}>
@@ -141,6 +149,7 @@ export default function PanelTwo() {
                 rows="6"
                 maxlength="100"
                 onChange={(e) => setInfo(e.target.value)}
+                defaultValue={oldKoksveckaData.info.disclaimer || ""}
               />
               <p className={styles.limit}>{info ? info.length : 0}/100</p>
             </section>

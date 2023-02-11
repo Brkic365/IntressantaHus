@@ -9,11 +9,13 @@ import { AiFillCloseCircle } from "react-icons/ai";
 
 import { useSelector } from "react-redux";
 
-function LibraryPicker({ amount, pickedSellers, startingSeller }) {
+function LibraryPicker({ amount, pickedSellers, startingSellers }) {
   const all_sellers = useSelector((state) => state.sellers.sellers);
 
   const [libraryOpen, setLibraryOpen] = useState(false);
-  const [sellers, setSellers] = useState([startingSeller]);
+
+  const [sellers, setSellers] = useState(startingSellers);
+  const [indexes, setIndexes] = useState(null);
 
   const formatSellers = (seller_ids) => {
     setLibraryOpen(false);
@@ -33,9 +35,30 @@ function LibraryPicker({ amount, pickedSellers, startingSeller }) {
     console.log(sellers_temp, seller_id);
   };
 
+  const getIndexes = () => {
+    let indexes_temp = [];
+
+    sellers.forEach(pickedSeller => {
+      all_sellers.forEach((seller, i) => {
+        if(pickedSeller._id == seller._id) {
+          indexes_temp.push(i)
+        }
+      });
+    });
+
+    setIndexes([...indexes_temp]);
+  };
+
   useEffect(() => {
     pickedSellers(sellers);
   }, [sellers]);
+
+  
+  useEffect(() => {
+    getIndexes(sellers);
+  }, [sellers]);
+
+  if(!indexes) return null;
 
   return (
     <section className={styles.filePicker}>
@@ -45,6 +68,7 @@ function LibraryPicker({ amount, pickedSellers, startingSeller }) {
           setLibraryOpen(false);
         }}
         amount={amount}
+        startingSelected={indexes}
         pickedSellers={formatSellers}
       />
 

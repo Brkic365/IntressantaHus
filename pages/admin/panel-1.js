@@ -156,7 +156,7 @@ export default function PanelOne() {
             <LibraryPicker
               amount={1}
               pickedSellers={(sellers) => setPickedSeller(sellers[0])}
-              startingSeller={oldSenastSaltData.info.seller || null}
+              startingSellers={[oldSenastSaltData.info.seller] || null}
             />
             <h3>Plats</h3>
             <input

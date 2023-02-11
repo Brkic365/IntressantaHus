@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "../../styles/Library.module.scss";
 import Modal from "@mui/material/Modal";
@@ -15,6 +15,7 @@ function Library({
   handleClose,
   amount,
   pickedSellers,
+  startingSelected = [],
   takenSellers = [],
 }) {
   const all_sellers = useSelector((state) => state.sellers.sellers);
@@ -66,6 +67,14 @@ function Library({
 
     pickedSellers(seller_ids);
   };
+
+  useEffect(() => {
+    console.log("start: ", startingSelected);
+    setSelected(startingSelected);
+  }, [])
+  
+
+  console.log(selected);
 
   if (!allSellers) return null;
 
