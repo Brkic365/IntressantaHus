@@ -99,6 +99,12 @@ export default function PanelTwo() {
   useEffect(() => {
     if (forsaljningData) {
       setForsaljningSellers([...forsaljningData.info.sellers]);
+      setInfo(oldKoksveckaData.info.disclaimer || null);
+
+      setYearTitle(forsaljningData.info.yearTitle || null);
+      setSalesThisYear(forsaljningData.info.thisYear || null);
+      setSalesTotalTitle(forsaljningData.info.totalTitle || null);
+      setSalesTotal(forsaljningData.info.totalt || null);
     }
   }, [forsaljningData]);
 

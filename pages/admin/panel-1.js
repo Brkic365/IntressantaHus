@@ -90,13 +90,13 @@ export default function PanelOne() {
 
   useEffect(() => {
     if(oldTilverkasNuData) {
-      setTilverkasNuPlats(oldTilverkasNuData.info.plats);
+      setTilverkasNuPlats(oldTilverkasNuData.info.plats || null);
     } 
   }, [oldTilverkasNuData])
 
   useEffect(() => {
     if(oldSenastSaltData) {
-      setSenastSaltPlats(oldSenastSaltData.info.plats);
+      setSenastSaltPlats(oldSenastSaltData.info.plats || null);
     } 
   }, [oldSenastSaltData])
 
