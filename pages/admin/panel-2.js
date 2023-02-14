@@ -181,21 +181,21 @@ export default function PanelTwo() {
               <h3>Totalt i år</h3>
               <input
                 style={{marginBottom: "0"}}
-                placeholder={forsaljningData.info.yearTitle}
+                defaultValue={forsaljningData.info.yearTitle || ""}
                 onChange={(e) => setYearTitle(e.target.value)}
               />
               <input
-                placeholder={forsaljningData.info.thisYear}
+                defaultValue={forsaljningData.info.thisYear || ""}
                 onChange={(e) => setSalesThisYear(e.target.value)}
               />
               <h3>Totalt</h3>
               <input
                 style={{marginBottom: "0"}}
-                placeholder={forsaljningData.info.totalTitle}
+                defaultValue={forsaljningData.info.totalTitle || ""}
                 onChange={(e) => setSalesTotalTitle(e.target.value)}
               />
               <input
-                placeholder={forsaljningData.info.totalt}
+                defaultValue={forsaljningData.info.totalt || ""}
                 onChange={(e) => setSalesTotal(e.target.value)}
               />
             </section>
