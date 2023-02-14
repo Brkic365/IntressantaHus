@@ -55,7 +55,9 @@ function LibraryPicker({ amount, pickedSellers, startingSellers }) {
 
   
   useEffect(() => {
-    getIndexes(sellers);
+    if(all_sellers && sellers) {
+      getIndexes(sellers);
+    }
   }, [sellers]);
 
   if(!indexes) return null;
