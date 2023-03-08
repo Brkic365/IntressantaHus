@@ -127,17 +127,17 @@
 @media only screen and (min-width: 2100px) {
   .carousel {
     .property {
-      width: 30rem;
+      width: 28rem;
 
       .imgHolder {
-        height: calc(30rem * 0.7);
+        height: calc(28rem * 0.7);
       }
     }
 
     .propertyDetails {
       padding: 1rem;
       margin-top: -1.5rem;
-      width: 30rem;
+      width: 28rem;
 
       p {
         font-size: 1.2rem;
@@ -152,6 +152,43 @@
     .sellerPfp {
       width: 5rem;
       height: 5rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 2200px) {
+  .carousel {
+    .property {
+      width: 33rem;
+
+      .imgHolder {
+        height: calc(33rem * 0.7);
+      }
+    }
+
+    .propertyDetails {
+      width: 33rem;
+    }
+
+    .sellerPfp {
+      width: 6rem;
+      height: 6rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 2450px) {
+  .carousel {
+    .property {
+      width: 35rem;
+
+      .imgHolder {
+        height: calc(35rem * 0.7);
+      }
+    }
+
+    .propertyDetails {
+      width: 35rem;
     }
   }
 }
