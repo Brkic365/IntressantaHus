@@ -177,18 +177,19 @@
   }
 }
 
-@media only screen and (min-width: 2450px) {
+@media only screen and (min-width: 2550px) {
   .carousel {
+    max-width: 40rem;
     .property {
-      width: 35rem;
+      width: 40rem;
 
       .imgHolder {
-        height: calc(35rem * 0.7);
+        height: calc(40rem * 0.7);
       }
     }
 
     .propertyDetails {
-      width: 35rem;
+      width: 40rem;
     }
   }
 }
